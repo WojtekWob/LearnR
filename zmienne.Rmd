@@ -57,3 +57,54 @@ print(z[2])
 print(z[3])
 ```
 
+Replikacja wektora
+
+```{r}
+x <- c("ala", "bela")
+rep(x, 3)
+rep(x, each=3)        # potwórz każdy element 3 razy
+rep(x, length.out=5)  # utworzenie wektora o zadanej długości
+rep(x, times=3)       # to samo co rep(x, 3)
+```
+
+Kombinacja dwóch wektorów
+
+a[1] -> b[1], b[2], b[3], b[4], b[5], b[6],  a[2] -> b[1], b[2], b[3], b[4], b[5], b[6],     .....   
+
+```{r}
+x <- c("kura", "kaczka")
+y <- c(1,-1,0,6,8,4) 
+z <- paste(rep(x, each=length(y)), rep(y, times=length(x)), sep='' )
+z
+```
+
+Formatowanie tekstu (patrz format w Pythonie)
+
+```{r}
+element <- 5
+sprintf("Indeks elementu: %d - element: %s",element, z[element])
+```
+```{r}
+cat(sprintf("%d - %3.0f",c(1,2,3,4,5,6,7,8,9), c(1,2,3,4,5,6,7,8,9) * 2 ), sep = '\n')
+```
+
+Użycie biblioteki stringi
+
+```{r}
+library(stringi)
+```
+
+Porównywanie tekstów
+
+```{r}
+stringi::stri_compare("ala","ala") #   0  - a1 == a2
+stringi::stri_compare("ala","bla") #  -1  - a1 < a2
+stringi::stri_compare("bla","ala") #   1  - a1 > a2
+
+```
+
+```{r}
+tekst
+stri_extract_all_regex(x,"ala")
+```
+
