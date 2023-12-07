@@ -48,7 +48,7 @@ saveWorkbook(wb, "a.xlsx", overwrite = TRUE)
 st2 <- createStyle(fgFill = "#DCE6F1", halign="center")
 mergeCells(wb, "S1", cols = 2:13, rows = 1)
 addStyle(wb, "S1", st2, 1, 2, gridExpand = FALSE, stack = FALSE)
-writeData(wb, 1, c("ala ma kota"), startCol = 2, startRow = 1, rowNames = FALSE)
+writeData(wb, 1, c("tabelka dla openxlsx"), startCol = 2, startRow = 1, rowNames = FALSE)
 saveWorkbook(wb, "a.xlsx", overwrite = TRUE)
 ```
 
@@ -63,14 +63,56 @@ colnames(dane) <- c('desc1','mpg1','cyl1','disp1')
 writeData(wb, "S2", dane, startCol = 1, startRow = 1, rowNames = FALSE, colNames = TRUE)
 
 writeData(wb, "S2", c(108), startCol = 8, startRow = 1, rowNames = FALSE, colNames = FALSE)
+writeData(wb, "S2", c(1:6), startCol = 5, startRow = 2, rowNames = FALSE, colNames = FALSE)
 
 posStyle <- createStyle(fontColour = "#006100", bgFill = "#C6EFCE")
+orStyle <- createStyle(fontColour = "white", bgFill = "blue")
+andStyle <- createStyle(fontColour = "white", bgFill = "red")
+saveWorkbook(wb, "a.xlsx", overwrite = TRUE)
+```
+
+
+```{r}
 conditionalFormatting(wb, "S2",
 cols = 4,
 rows = 2:7, rule = " > $H$1", style = posStyle, type = "expression"
 )
+saveWorkbook(wb, nazwa_pliku, overwrite = TRUE)
+```
 
+
+```{r}
+conditionalFormatting(wb, "S2",
+cols = 5,
+rows = 2:7, style = posStyle, type = "between", rule = c(2, 4)
+)
+saveWorkbook(wb, nazwa_pliku, overwrite = TRUE)
+```
+
+
+```{r}
+conditionalFormatting(wb, "S2",
+cols = 1,
+rows = 2:7, style = posStyle, type = "contains", rule = "Ma"
+)
+saveWorkbook(wb, nazwa_pliku, overwrite = TRUE)
+```
+
+
+```{r}
+conditionalFormatting(wb, "S2",
+cols = 4,
+rows = 2:7, rule = "OR($C2=8,$D2=108)", style = orStyle, type = "expression"
+)
 saveWorkbook(wb, nazwa_pliku, overwrite = TRUE)
 
+```
+
+```{r}
+conditionalFormatting(wb, "S2",
+cols = 4,
+rows = 2:7, rule = "AND($C2=6,$D2=225)", style = andStyle, type = "expression"
+)
+saveWorkbook(wb, nazwa_pliku, overwrite = TRUE)
 ```
 
