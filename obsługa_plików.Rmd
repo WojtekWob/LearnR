@@ -1,0 +1,97 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Obsługa danych plikowyvh
+
+
+Obsługa arkusza xlsx
+
+# install.packages("readxl")
+
+```{r}
+library(readxl)
+plik_xlsx <- "./testowe.xlsx"
+```
+
+```{r}
+excel_sheets(plik_xlsx)
+```
+```{r}
+df <- read_xlsx(path = plik_xlsx)
+df$b1 <- round(df$b1,1)
+df$b2 <- round(df$b2,1)
+df$b3 <- round(df$b3,1)
+df$b4 <- round(df$b4,1)
+df$b5 <- round(df$b5,1)
+df$b6 <- round(df$b6,1)
+df
+```
+
+# zmiana naz i wybór niektórych kolumn z dokumentu xlsx
+# możliwe typy -> "skip", "guess", "logical", "numeric", "date", "text", "list"
+```{r}
+columns <- c("a_1","a_2","a_3","a_4","a_5","a_6","a_7","a_8","a_9","b_1","b_2","b_3","b_4","b_5","b_6")
+types <- c("guess","guess","skip","skip","skip","skip","skip","skip","skip","skip","skip","guess","skip","skip","skip")
+
+df <- read_xlsx(path = plik_xlsx, sheet = "dat2", col_names = columns, skip = 2, col_types = types ) 
+df
+```
+
+# Wybór niektórych wierszy 
+
+```{r}
+columns <- c("a_1","a_2","a_3","a_4","a_5","a_6","a_7","a_8","a_9","b_1","b_2","b_3","b_4","b_5","b_6")
+df <- read_xlsx(path = plik_xlsx, sheet = "dat3", col_names = columns, range = cell_rows(c(3, 5)) ) 
+df
+```
+```{r}
+col <- colnames(df)
+col[1]
+```
+Wygenerowania zapytania UPDATE dla wiersza 
+
+```{r}
+wie <- df[1,]
+i <- 0
+tekst <- "UPDATE tabela SET "
+for (kol in col) {
+  i <- i + 1
+  m <- sprintf("%s = '%s'",col[i], wie[i])
+  if (i==1) { tekst <- paste(tekst, m)  }
+  else {
+    tekst <- paste(tekst, m, sep=", ")
+  }
+}
+tekst <- paste(tekst, " WHERE warunek")
+tekst
+```
+
+Wygenerowania zapytania INSERT dla wiersza 
+
+```{r}
+wie <- df[1,]
+i <- 0
+tekst <- "INSERT INTO tabela ("
+for (kol in col) {
+  i <- i + 1
+  m <- col[i]
+  if (i==1) { tekst <- paste(tekst, m)  }
+  else {
+    tekst <- paste(tekst, m, sep=", ")
+  }
+}
+tekst <- paste(tekst, ") VALUE (")
+i <- 0
+for (kol in col) {
+  i <- i + 1
+  m <- paste("'",wie[i],"'", sep="")
+  if (i==1) { tekst <- paste(tekst, m)  }
+  else {
+    tekst <- paste(tekst, m, sep=", ")
+  }
+}
+tekst <- paste(tekst, ")")
+tekst
+```

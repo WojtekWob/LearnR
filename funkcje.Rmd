@@ -1,0 +1,74 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Funkcje
+
+```{r}
+suma <- function(a,b) {
+  s <- paste(a, b, sep = "")
+  return(s)
+}
+```
+
+```{r}
+wynik <- suma("4", "6")
+wynik
+```
+
+```{r}
+wynik <- suma(b="4", a="6")
+wynik
+```
+```{r}
+#funkcja bez return
+suma <- function(a,b) {
+  s <- paste(a, b, sep = "")
+  
+}
+wynik <- suma("4", "6")
+wynik
+```
+
+```{r}
+arg_domyslny <- function(a,b="0") {
+  s <- paste(a, b, sep = "")
+  return(s)
+}
+```
+
+```{r}
+wynik <- suma(b="4")
+wynik
+```
+
+```{r}
+wynik <- arg_domyslny(a="4")
+wynik
+```
+
+```{r}
+wynik <- arg_domyslny(a="4", 8)
+wynik
+```
+```{r}
+c_suma <- function(v) sum(v)/length(v)
+```
+
+```{r}
+a <- c(1, 2, 3, 4, 5, 6)
+s <- c_suma(a)
+s
+```
+
+
+
+```{r}
+d <- function(...) {
+    arg <- c(...)
+    sum(arg)
+}
+d(1,2,3,4,5)
+```
+

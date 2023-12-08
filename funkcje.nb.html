@@ -1752,430 +1752,115 @@ display: none;
 
 
 <!-- rnb-text-begin -->
-<p>Operacje na łańcuchach znaków</p>
+<p>Funkcje</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuYSA8LSBiIDwtIFxcVVMgT2xzenR5blxcXG5cbnRla3N0IDwtICdhbGEgbWEga290YSdcbmNsYXNzKHRla3N0KVxuYGBgXG5gYGAifQ== -->
-<pre class="r"><code>```r
-a &lt;- b &lt;- \US Olsztyn\
-
-tekst &lt;- &#39;ala ma kota&#39;
-class(tekst)</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcY2hhcmFjdGVyXFxcbiJ9 --&gt;
-</code></pre>
-<p>[1] <br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-Zamiana łańcucha znaków na wektor znaków i wyświetlenie ich z indeksem
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxueCA8LSB1bmxpc3Qoc3Ryc3BsaXQodGVrc3QsICcnKSlcbmluZCA8LSAwXG5mb3IgKHggaW4geCkge1xuICBpbmQgPC0gaW5kICsgMVxuICBwcmludChwYXN0ZShpbmQsIHgpKVxufVxuYGBgXG5gYGAifQ== --&gt;
-
-```r
-```r
-x &lt;- unlist(strsplit(tekst, &#39;&#39;))
-ind &lt;- 0
-for (x in x) {
-  ind &lt;- ind + 1
-  print(paste(ind, x))
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtYSA8LSBmdW5jdGlvbihhLGIpIHtcbiAgcyA8LSBwYXN0ZShhLGIpXG4gIHJldHVybihzKVxufVxuYGBgIn0= -->
+<pre class="r"><code>suma &lt;- function(a,b) {
+  s &lt;- paste(a,b)
+  return(s)
 }</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcMSBhXFxcblsxXSBcXDIgbFxcXG5bMV0gXFwzIGFcXFxuWzFdIFxcNCAgXFxcblsxXSBcXDUgbVxcXG5bMV0gXFw2IGFcXFxuWzFdIFxcNyAgXFxcblsxXSBcXDgga1xcXG5bMV0gXFw5IG9cXFxuWzFdIFxcMTAgdFxcXG5bMV0gXFwxMSBhXFxcbiJ9 --&gt;
-</code></pre>
-<p>[1] \1 a<br />
-[1] \2 l<br />
-[1] \3 a<br />
-[1] \4<br />
-[1] \5 m<br />
-[1] \6 a<br />
-[1] \7<br />
-[1] \8 k<br />
-[1] \9 o<br />
-[1] \10 t<br />
-[1] \11 a<br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-lub
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxueCA8LSB1bmxpc3Qoc3Ryc3BsaXQodGVrc3QsICcnKSlcbmxlbmd0aCh4KVxuYGBgXG5gYGAifQ== --&gt;
-
-```r
-```r
-x &lt;- unlist(strsplit(tekst, &#39;&#39;))
-length(x)</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIDExXG4ifQ== --&gt;
-</code></pre>
-<p>[1] 11</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZm9yIChpbmQgaW4gMTpsZW5ndGgoeCkpIHtcbiAgIHByaW50KHBhc3RlKGluZCwgeFtpbmRdKSlcbn1cbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-for (ind in 1:length(x)) {
-   print(paste(ind, x[ind]))
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud3luaWsgPC0gc3VtYShcIjRcIixcIjZcIilcbnd5bmlrXG5gYGAifQ== -->
+<pre class="r"><code>wynik &lt;- suma(&quot;4&quot;,&quot;6&quot;)
+wynik</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiNCA2XCJcbiJ9 -->
+<pre><code>[1] &quot;4 6&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud3luaWsgPC0gc3VtYShiPVwiNFwiLGE9XCI2XCIpXG53eW5pa1xuYGBgIn0= -->
+<pre class="r"><code>wynik &lt;- suma(b=&quot;4&quot;,a=&quot;6&quot;)
+wynik</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiNiA0XCJcbiJ9 -->
+<pre><code>[1] &quot;6 4&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2Z1bmtjamEgYmV6IHJldHVyblxuc3VtYSA8LSBmdW5jdGlvbihhLGIpIHtcbiAgcyA8LSBwYXN0ZShhLCBiLCBzZXAgPSBcIlwiKVxuICBcbn1cbnd5bmlrIDwtIHN1bWEoXCI0XCIsIFwiNlwiKVxud3luaWtcbmBgYCJ9 -->
+<pre class="r"><code>#funkcja bez return
+suma &lt;- function(a,b) {
+  s &lt;- paste(a, b, sep = &quot;&quot;)
+  
+}
+wynik &lt;- suma(&quot;4&quot;, &quot;6&quot;)
+wynik</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXJnX2RvbXlzbG55IDwtIGZ1bmN0aW9uKGEsYj1cIjBcIikge1xuICBzIDwtIHBhc3RlKGEsIGIsIHNlcCA9IFwiXCIpXG4gIHJldHVybihzKVxufVxuYGBgIn0= -->
+<pre class="r"><code>arg_domyslny &lt;- function(a,b=&quot;0&quot;) {
+  s &lt;- paste(a, b, sep = &quot;&quot;)
+  return(s)
 }</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcMSBhXFxcblsxXSBcXDIgbFxcXG5bMV0gXFwzIGFcXFxuWzFdIFxcNCAgXFxcblsxXSBcXDUgbVxcXG5bMV0gXFw2IGFcXFxuWzFdIFxcNyAgXFxcblsxXSBcXDgga1xcXG5bMV0gXFw5IG9cXFxuWzFdIFxcMTAgdFxcXG5bMV0gXFwxMSBhXFxcbiJ9 --&gt;
-</code></pre>
-<p>[1] \1 a<br />
-[1] \2 l<br />
-[1] \3 a<br />
-[1] \4<br />
-[1] \5 m<br />
-[1] \6 a<br />
-[1] \7<br />
-[1] \8 k<br />
-[1] \9 o<br />
-[1] \10 t<br />
-[1] \11 a<br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-
-Podział tekstu na literały (słowa)
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxueSA8LSB1bmxpc3Qoc3Ryc3BsaXQodGVrc3QsICcgJykpXG55WzFdXG5gYGBcbmBgYCJ9 --&gt;
-
-```r
-```r
-y &lt;- unlist(strsplit(tekst, &#39; &#39;))
-y[1]</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcYWxhXFxcbiJ9 --&gt;
-</code></pre>
-<p>[1] <br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxueVsyXVxuYGBgXG5gYGAifQ== --&gt;
-
-```r
-```r
-y[2]</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcbWFcXFxuIn0= --&gt;
-</code></pre>
-<p>[1] <br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxueVszXVxuYGBgXG5gYGAifQ== --&gt;
-
-```r
-```r
-y[3]</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxca290YVxcXG4ifQ== --&gt;
-</code></pre>
-<p>[1] <br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxudG91cHBlcih0ZWtzdClcbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-toupper(tekst)</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcQUxBIE1BIEtPVEFcXFxuIn0= --&gt;
-</code></pre>
-<p>[1] MA KOTA<br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxudG9sb3dlcih0ZWtzdClcbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-tolower(tekst)</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcYWxhIG1hIGtvdGFcXFxuIn0= --&gt;
-</code></pre>
-<p>[1] ma kota<br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZ3N1YignICcsICdfJywgdGVrc3QpXG5cbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-gsub(&#39; &#39;, &#39;_&#39;, tekst)
-</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcYWxhX21hX2tvdGFcXFxuIn0= --&gt;
-</code></pre>
-<p>[1] _ma_kota<br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxueiA8LSBjKFxcYWxhXFwsIFxcbWFcXCwgXFxrb3RhXFwpXG5jbGFzcyh6KVxucHJpbnQoelsxXSlcbnByaW50KHpbMl0pXG5wcmludCh6WzNdKVxuYGBgXG5gYGAifQ== --&gt;
-
-```r
-```r
-z &lt;- c(\ala\, \ma\, \kota\)
-class(z)
-print(z[1])
-print(z[2])
-print(z[3])</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-Replikacja wektora
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueCA8LSBjKFwiYWxhXCIsIFwiYmVsYVwiKVxucmVwKHgsIDMpXG5gYGAifQ== --&gt;
-
-```r
-x &lt;- c(&quot;ala&quot;, &quot;bela&quot;)
-rep(x, 3)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYWxhXCIgIFwiYmVsYVwiIFwiYWxhXCIgIFwiYmVsYVwiIFwiYWxhXCIgIFwiYmVsYVwiXG4ifQ== -->
-<pre><code>[1] &quot;ala&quot;  &quot;bela&quot; &quot;ala&quot;  &quot;bela&quot; &quot;ala&quot;  &quot;bela&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVwKHgsIGVhY2g9MykgICAgICAgICMgcG90d8Ozcnoga2HFvGR5IGVsZW1lbnQgMyByYXp5XG5gYGAifQ== -->
-<pre class="r"><code>rep(x, each=3)        # potwórz każdy element 3 razy</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYWxhXCIgIFwiYWxhXCIgIFwiYWxhXCIgIFwiYmVsYVwiIFwiYmVsYVwiIFwiYmVsYVwiXG4ifQ== -->
-<pre><code>[1] &quot;ala&quot;  &quot;ala&quot;  &quot;ala&quot;  &quot;bela&quot; &quot;bela&quot; &quot;bela&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVwKHgsIGxlbmd0aC5vdXQ9NSkgICMgdXR3b3J6ZW5pZSB3ZWt0b3JhIG8gemFkYW5laiBkxYJ1Z2/Fm2NpXG5gYGAifQ== -->
-<pre class="r"><code>rep(x, length.out=5)  # utworzenie wektora o zadanej długości</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYWxhXCIgIFwiYmVsYVwiIFwiYWxhXCIgIFwiYmVsYVwiIFwiYWxhXCIgXG4ifQ== -->
-<pre><code>[1] &quot;ala&quot;  &quot;bela&quot; &quot;ala&quot;  &quot;bela&quot; &quot;ala&quot; </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVwKHgsIHRpbWVzPTMpICAgICAgICMgdG8gc2FtbyBjbyByZXAoeCwgMylcbmBgYCJ9 -->
-<pre class="r"><code>rep(x, times=3)       # to samo co rep(x, 3)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYWxhXCIgIFwiYmVsYVwiIFwiYWxhXCIgIFwiYmVsYVwiIFwiYWxhXCIgIFwiYmVsYVwiXG4ifQ== -->
-<pre><code>[1] &quot;ala&quot;  &quot;bela&quot; &quot;ala&quot;  &quot;bela&quot; &quot;ala&quot;  &quot;bela&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Kombinacja dwóch wektorów</p>
-<p>a[1] -&gt; b[1], b[2], b[3], b[4], b[5], b[6], a[2] -&gt; b[1], b[2],
-b[3], b[4], b[5], b[6], …..</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuelxuXG5gYGAifQ== -->
-<pre class="r"><code>z
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcImFsYTFcIiAgIFwiYWxhLTFcIiAgXCJhbGEwXCIgICBcImFsYTZcIiAgIFwiYWxhOFwiICAgXCJhbGE0XCIgICBcImJlbGExXCIgIFwiYmVsYS0xXCIgXCJiZWxhMFwiICBcImJlbGE2XCIgIFwiYmVsYThcIiAgXCJiZWxhNFwiIFxuIn0= -->
-<pre><code> [1] &quot;ala1&quot;   &quot;ala-1&quot;  &quot;ala0&quot;   &quot;ala6&quot;   &quot;ala8&quot;   &quot;ala4&quot;   &quot;bela1&quot;  &quot;bela-1&quot; &quot;bela0&quot;  &quot;bela6&quot;  &quot;bela8&quot;  &quot;bela4&quot; </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Formatowanie tekstu (patrz format w Pythonie)</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3ByaW50ZihcIkluZGVrcyBlbGVtZW50dSAlZCAtIGVsZW1lbnQ6ICVzXCIsZWxlbWVudCwgeltlbGVtZW50XSlcblxuYGBgIn0= -->
-<pre class="r"><code>sprintf(&quot;Indeks elementu %d - element: %s&quot;,element, z[element])
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiSW5kZWtzIGVsZW1lbnR1IDUgLSBlbGVtZW50OiBhbGE4XCJcbiJ9 -->
-<pre><code>[1] &quot;Indeks elementu 5 - element: ala8&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KHNwcmludGYoXCIlZCAtICUzLjBmXCIsYygxLDIsMyw0LDUsNiw3LDgsOSksIGMoMSwyLDMsNCw1LDYsNyw4LDkpICogMiApLCBzZXAgPSAnXFxuJylcblxuYGBgIn0= -->
-<pre class="r"><code>cat(sprintf(&quot;%d - %3.0f&quot;,c(1,2,3,4,5,6,7,8,9), c(1,2,3,4,5,6,7,8,9) * 2 ), sep = &#39;\n&#39;)
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiMSAtICAgMlxuMiAtICAgNFxuMyAtICAgNlxuNCAtICAgOFxuNSAtICAxMFxuNiAtICAxMlxuNyAtICAxNFxuOCAtICAxNlxuOSAtICAxOFxuIn0= -->
-<pre><code>1 -   2
-2 -   4
-3 -   6
-4 -   8
-5 -  10
-6 -  12
-7 -  14
-8 -  16
-9 -  18</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Użycie biblioteki stringi</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Porównywanie tekstów</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyaW5naTo6c3RyaV9jb21wYXJlKFwiYWxhXCIsXCJhbGFcIikgIyAgIDAgIC0gYTEgPT0gYTJcbmBgYCJ9 -->
-<pre class="r"><code>stringi::stri_compare(&quot;ala&quot;,&quot;ala&quot;) #   0  - a1 == a2</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDBcbiJ9 -->
-<pre><code>[1] 0</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyaW5naTo6c3RyaV9jb21wYXJlKFwiYWxhXCIsXCJibGFcIikgIyAgLTEgIC0gYTEgPCBhMlxuYGBgIn0= -->
-<pre class="r"><code>stringi::stri_compare(&quot;ala&quot;,&quot;bla&quot;) #  -1  - a1 &lt; a2</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIC0xXG4ifQ== -->
-<pre><code>[1] -1</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyaW5naTo6c3RyaV9jb21wYXJlKFwiYmxhXCIsXCJhbGFcIikgIyAgIDEgIC0gYTEgPiBhMlxuYGBgIn0= -->
-<pre class="r"><code>stringi::stri_compare(&quot;bla&quot;,&quot;ala&quot;) #   1  - a1 &gt; a2</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDFcbiJ9 -->
-<pre><code>[1] 1</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyaV9leHRyYWN0X2FsbF9yZWdleCh4LFwiYWxhXCIpXG5cbmBgYCJ9 -->
-<pre class="r"><code>stri_extract_all_regex(x,&quot;ala&quot;)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud3luaWsgPC0gc3VtYShiPVwiNFwiKVxud3luaWtcbmBgYCJ9 -->
+<pre class="r"><code>wynik &lt;- suma(b=&quot;4&quot;)
+wynik</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cblsxXSBcImFsYVwiXG5cbltbMl1dXG5bMV0gTkFcbiJ9 -->
-<pre><code>[[1]]
-[1] &quot;ala&quot;
-
-[[2]]
-[1] NA</code></pre>
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud3luaWsgPC0gYXJnX2RvbXlzbG55KGE9XCI0XCIpXG53eW5pa1xuYGBgIn0= -->
+<pre class="r"><code>wynik &lt;- arg_domyslny(a=&quot;4&quot;)
+wynik</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud3luaWsgPC0gYXJnX2RvbXlzbG55KGE9XCI0XCIsIDgpXG53eW5pa1xuYGBgIn0= -->
+<pre class="r"><code>wynik &lt;- arg_domyslny(a=&quot;4&quot;, 8)
+wynik</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY19zdW1hIDwtIGZ1bmN0aW9uKHYpIHN1bSh2KS9sZW5ndGgodilcbmBgYCJ9 -->
+<pre class="r"><code>c_suma &lt;- function(v) sum(v)/length(v)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA8LSBjKDEsIDIsIDMsIDQsIDUsIDYpXG5zIDwtIGNfc3VtYShhKVxuc1xuYGBgIn0= -->
+<pre class="r"><code>a &lt;- c(1, 2, 3, 4, 5, 6)
+s &lt;- c_suma(a)
+s</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZCA8LSBmdW5jdGlvbiguLi4pIHtcbiAgICBhcmcgPC0gYyguLi4pXG4gICAgc3VtKGFyZylcbn1cbmQoMSwyLDMsNCw1KVxuYGBgIn0= -->
+<pre class="r"><code>d &lt;- function(...) {
+    arg &lt;- c(...)
+    sum(arg)
+}
+d(1,2,3,4,5)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDE1XG4ifQ== -->
+<pre><code>[1] 15</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpPcGVyYWNqZSBuYSDFgmHFhGN1Y2hhY2ggem5ha8Ozdw0KDQpgYGB7cn0NCmEgPC0gYiA8LSAiVVMgT2xzenR5biINCg0KdGVrc3QgPC0gJ0FsYSBNQSBrb3RhJw0KY2xhc3ModGVrc3QpDQpgYGANClphbWlhbmEgxYJhxYRjdWNoYSB6bmFrw7N3IG5hIHdla3RvciB6bmFrw7N3IGkgd3nFm3dpZXRsZW5pZSBpY2ggeiBpbmRla3NlbQ0KYGBge3J9DQp4IDwtIHVubGlzdChzdHJzcGxpdCh0ZWtzdCwgJycpKQ0KaW5kIDwtIDANCmZvciAoeCBpbiB4KSB7DQogIGluZCA8LSBpbmQgKyAxDQogIHByaW50KHBhc3RlKGluZCwgeCkpDQp9DQoNCmBgYA0KbHViDQoNCmBgYHtyfQ0KeCA8LSB1bmxpc3Qoc3Ryc3BsaXQodGVrc3QsICcnKSkNCmZvciAoaW5kIGluIDE6bGVuZ3RoKHgpKSB7DQogICBwcmludChwYXN0ZShpbmQsIHhbaW5kXSkpDQp9DQpgYGANCg0KDQpQb2R6aWHFgiB0ZWtzdHUgbmEgbGl0ZXJhxYJ5IChzxYJvd2EpDQpgYGB7cn0NCnkgPC0gdW5saXN0KHN0cnNwbGl0KHRla3N0LCAnICcpKQ0KeVsxXQ0KeVsyXQ0KeVszXQ0KYGBgDQoNCg0KYGBge3J9DQp0b3VwcGVyKHRla3N0KSAgIyB6bWlhbmEgbmEgd2llbGtpZSBsaXRlcnkNCnRvbG93ZXIodGVrc3QpICAjIHptaWFuYSBuYSBtYcWCZSBsaXRlcnkNCmBgYA0KYGBge3J9DQpnc3ViKCcgJywgJ18nLCB0ZWtzdCkgICAjIHphbWlhbmEgem5ha3UgbmEgaW5ueSB6bmFrDQpgYGANCg0KDQpgYGB7cn0NCnogPC0gYygiYWxhIiwgIm1hIiwgImtvdGEiKQ0KY2xhc3MoeikNCnByaW50KHpbMV0pDQpwcmludCh6WzJdKQ0KcHJpbnQoelszXSkNCmBgYA0KDQpSZXBsaWthY2phIHdla3RvcmENCg0KYGBge3J9DQp4IDwtIGMoImFsYSIsICJiZWxhIikNCnJlcCh4LCAzKQ0KcmVwKHgsIGVhY2g9MykgICAgICAgICMgcG90d8Ozcnoga2HFvGR5IGVsZW1lbnQgMyByYXp5DQpyZXAoeCwgbGVuZ3RoLm91dD01KSAgIyB1dHdvcnplbmllIHdla3RvcmEgbyB6YWRhbmVqIGTFgnVnb8WbY2kNCnJlcCh4LCB0aW1lcz0zKSAgICAgICAjIHRvIHNhbW8gY28gcmVwKHgsIDMpDQpgYGANCg0KS29tYmluYWNqYSBkd8OzY2ggd2VrdG9yw7N3DQoNCmFbMV0gLT4gYlsxXSwgYlsyXSwgYlszXSwgYls0XSwgYls1XSwgYls2XSwgIGFbMl0gLT4gYlsxXSwgYlsyXSwgYlszXSwgYls0XSwgYls1XSwgYls2XSwgICAgIC4uLi4uICAgDQoNCmBgYHtyfQ0KeCA8LSBjKCJrdXJhIiwgImthY3prYSIpDQp5IDwtIGMoMSwtMSwwLDYsOCw0KSANCnogPC0gcGFzdGUocmVwKHgsIGVhY2g9bGVuZ3RoKHkpKSwgcmVwKHksIHRpbWVzPWxlbmd0aCh4KSksIHNlcD0nJyApDQp6DQpgYGANCg0KRm9ybWF0b3dhbmllIHRla3N0dSAocGF0cnogZm9ybWF0IHcgUHl0aG9uaWUpDQoNCmBgYHtyfQ0KZWxlbWVudCA8LSA1DQpzcHJpbnRmKCJJbmRla3MgZWxlbWVudHU6ICVkIC0gZWxlbWVudDogJXMiLGVsZW1lbnQsIHpbZWxlbWVudF0pDQpgYGANCmBgYHtyfQ0KY2F0KHNwcmludGYoIiVkIC0gJTMuMGYiLGMoMSwyLDMsNCw1LDYsNyw4LDkpLCBjKDEsMiwzLDQsNSw2LDcsOCw5KSAqIDIgKSwgc2VwID0gJ1xuJykNCmBgYA0KDQpVxbx5Y2llIGJpYmxpb3Rla2kgc3RyaW5naQ0KDQpgYGB7cn0NCmxpYnJhcnkoc3RyaW5naSkNCmBgYA0KDQpQb3LDs3dueXdhbmllIHRla3N0w7N3DQoNCmBgYHtyfQ0Kc3RyaW5naTo6c3RyaV9jb21wYXJlKCJhbGEiLCJhbGEiKSAjICAgMCAgLSBhMSA9PSBhMg0Kc3RyaW5naTo6c3RyaV9jb21wYXJlKCJhbGEiLCJibGEiKSAjICAtMSAgLSBhMSA8IGEyDQpzdHJpbmdpOjpzdHJpX2NvbXBhcmUoImJsYSIsImFsYSIpICMgICAxICAtIGExID4gYTINCg0KYGBgDQoNCmBgYHtyfQ0KdGVrc3QNCnN0cmlfZXh0cmFjdF9hbGxfcmVnZXgoeCwiYWxhIikNCmBgYA0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpGdW5rY2plDQoNCmBgYHtyfQ0Kc3VtYSA8LSBmdW5jdGlvbihhLGIpIHsNCiAgcyA8LSBwYXN0ZShhLCBiLCBzZXAgPSAiIikNCiAgcmV0dXJuKHMpDQp9DQpgYGANCg0KYGBge3J9DQp3eW5payA8LSBzdW1hKCI0IiwgIjYiKQ0Kd3luaWsNCmBgYA0KDQpgYGB7cn0NCnd5bmlrIDwtIHN1bWEoYj0iNCIsIGE9IjYiKQ0Kd3luaWsNCmBgYA0KYGBge3J9DQojZnVua2NqYSBiZXogcmV0dXJuDQpzdW1hIDwtIGZ1bmN0aW9uKGEsYikgew0KICBzIDwtIHBhc3RlKGEsIGIsIHNlcCA9ICIiKQ0KICANCn0NCnd5bmlrIDwtIHN1bWEoIjQiLCAiNiIpDQp3eW5paw0KYGBgDQoNCmBgYHtyfQ0KYXJnX2RvbXlzbG55IDwtIGZ1bmN0aW9uKGEsYj0iMCIpIHsNCiAgcyA8LSBwYXN0ZShhLCBiLCBzZXAgPSAiIikNCiAgcmV0dXJuKHMpDQp9DQpgYGANCg0KYGBge3J9DQp3eW5payA8LSBzdW1hKGI9IjQiKQ0Kd3luaWsNCmBgYA0KDQpgYGB7cn0NCnd5bmlrIDwtIGFyZ19kb215c2xueShhPSI0IikNCnd5bmlrDQpgYGANCg0KYGBge3J9DQp3eW5payA8LSBhcmdfZG9teXNsbnkoYT0iNCIsIDgpDQp3eW5paw0KYGBgDQpgYGB7cn0NCmNfc3VtYSA8LSBmdW5jdGlvbih2KSBzdW0odikvbGVuZ3RoKHYpDQpgYGANCg0KYGBge3J9DQphIDwtIGMoMSwgMiwgMywgNCwgNSwgNikNCnMgPC0gY19zdW1hKGEpDQpzDQpgYGANCg0KDQoNCmBgYHtyfQ0KZCA8LSBmdW5jdGlvbiguLi4pIHsNCiAgICBhcmcgPC0gYyguLi4pDQogICAgc3VtKGFyZykNCn0NCmQoMSwyLDMsNCw1KQ0KYGBgDQoNCg==</div>
 
 
 
@@ -2222,7 +1907,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("zmienne.Rmd");
+  window.initializeSourceEmbed("funkcje.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>

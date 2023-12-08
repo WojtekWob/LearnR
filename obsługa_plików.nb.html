@@ -1752,430 +1752,140 @@ display: none;
 
 
 <!-- rnb-text-begin -->
-<p>Operacje na łańcuchach znaków</p>
+<p>Obsługa danych plikowyvh</p>
+<p>Obsługa arkusza xlsx</p>
+<div id="install.packagesreadxl" class="section level1">
+<h1>install.packages(“readxl”)</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuYSA8LSBiIDwtIFxcVVMgT2xzenR5blxcXG5cbnRla3N0IDwtICdhbGEgbWEga290YSdcbmNsYXNzKHRla3N0KVxuYGBgXG5gYGAifQ== -->
-<pre class="r"><code>```r
-a &lt;- b &lt;- \US Olsztyn\
-
-tekst &lt;- &#39;ala ma kota&#39;
-class(tekst)</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcY2hhcmFjdGVyXFxcbiJ9 --&gt;
-</code></pre>
-<p>[1] <br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-Zamiana łańcucha znaków na wektor znaków i wyświetlenie ich z indeksem
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxueCA8LSB1bmxpc3Qoc3Ryc3BsaXQodGVrc3QsICcnKSlcbmluZCA8LSAwXG5mb3IgKHggaW4geCkge1xuICBpbmQgPC0gaW5kICsgMVxuICBwcmludChwYXN0ZShpbmQsIHgpKVxufVxuYGBgXG5gYGAifQ== --&gt;
-
-```r
-```r
-x &lt;- unlist(strsplit(tekst, &#39;&#39;))
-ind &lt;- 0
-for (x in x) {
-  ind &lt;- ind + 1
-  print(paste(ind, x))
-}</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcMSBhXFxcblsxXSBcXDIgbFxcXG5bMV0gXFwzIGFcXFxuWzFdIFxcNCAgXFxcblsxXSBcXDUgbVxcXG5bMV0gXFw2IGFcXFxuWzFdIFxcNyAgXFxcblsxXSBcXDgga1xcXG5bMV0gXFw5IG9cXFxuWzFdIFxcMTAgdFxcXG5bMV0gXFwxMSBhXFxcbiJ9 --&gt;
-</code></pre>
-<p>[1] \1 a<br />
-[1] \2 l<br />
-[1] \3 a<br />
-[1] \4<br />
-[1] \5 m<br />
-[1] \6 a<br />
-[1] \7<br />
-[1] \8 k<br />
-[1] \9 o<br />
-[1] \10 t<br />
-[1] \11 a<br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-lub
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxueCA8LSB1bmxpc3Qoc3Ryc3BsaXQodGVrc3QsICcnKSlcbmxlbmd0aCh4KVxuYGBgXG5gYGAifQ== --&gt;
-
-```r
-```r
-x &lt;- unlist(strsplit(tekst, &#39;&#39;))
-length(x)</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIDExXG4ifQ== --&gt;
-</code></pre>
-<p>[1] 11</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZm9yIChpbmQgaW4gMTpsZW5ndGgoeCkpIHtcbiAgIHByaW50KHBhc3RlKGluZCwgeFtpbmRdKSlcbn1cbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-for (ind in 1:length(x)) {
-   print(paste(ind, x[ind]))
-}</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcMSBhXFxcblsxXSBcXDIgbFxcXG5bMV0gXFwzIGFcXFxuWzFdIFxcNCAgXFxcblsxXSBcXDUgbVxcXG5bMV0gXFw2IGFcXFxuWzFdIFxcNyAgXFxcblsxXSBcXDgga1xcXG5bMV0gXFw5IG9cXFxuWzFdIFxcMTAgdFxcXG5bMV0gXFwxMSBhXFxcbiJ9 --&gt;
-</code></pre>
-<p>[1] \1 a<br />
-[1] \2 l<br />
-[1] \3 a<br />
-[1] \4<br />
-[1] \5 m<br />
-[1] \6 a<br />
-[1] \7<br />
-[1] \8 k<br />
-[1] \9 o<br />
-[1] \10 t<br />
-[1] \11 a<br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-
-Podział tekstu na literały (słowa)
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxueSA8LSB1bmxpc3Qoc3Ryc3BsaXQodGVrc3QsICcgJykpXG55WzFdXG5gYGBcbmBgYCJ9 --&gt;
-
-```r
-```r
-y &lt;- unlist(strsplit(tekst, &#39; &#39;))
-y[1]</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcYWxhXFxcbiJ9 --&gt;
-</code></pre>
-<p>[1] <br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxueVsyXVxuYGBgXG5gYGAifQ== --&gt;
-
-```r
-```r
-y[2]</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcbWFcXFxuIn0= --&gt;
-</code></pre>
-<p>[1] <br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxueVszXVxuYGBgXG5gYGAifQ== --&gt;
-
-```r
-```r
-y[3]</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxca290YVxcXG4ifQ== --&gt;
-</code></pre>
-<p>[1] <br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxudG91cHBlcih0ZWtzdClcbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-toupper(tekst)</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcQUxBIE1BIEtPVEFcXFxuIn0= --&gt;
-</code></pre>
-<p>[1] MA KOTA<br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxudG9sb3dlcih0ZWtzdClcbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-tolower(tekst)</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcYWxhIG1hIGtvdGFcXFxuIn0= --&gt;
-</code></pre>
-<p>[1] ma kota<br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZ3N1YignICcsICdfJywgdGVrc3QpXG5cbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-gsub(&#39; &#39;, &#39;_&#39;, tekst)
-</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcYWxhX21hX2tvdGFcXFxuIn0= --&gt;
-</code></pre>
-<p>[1] _ma_kota<br />
-</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxueiA8LSBjKFxcYWxhXFwsIFxcbWFcXCwgXFxrb3RhXFwpXG5jbGFzcyh6KVxucHJpbnQoelsxXSlcbnByaW50KHpbMl0pXG5wcmludCh6WzNdKVxuYGBgXG5gYGAifQ== --&gt;
-
-```r
-```r
-z &lt;- c(\ala\, \ma\, \kota\)
-class(z)
-print(z[1])
-print(z[2])
-print(z[3])</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-Replikacja wektora
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueCA8LSBjKFwiYWxhXCIsIFwiYmVsYVwiKVxucmVwKHgsIDMpXG5gYGAifQ== --&gt;
-
-```r
-x &lt;- c(&quot;ala&quot;, &quot;bela&quot;)
-rep(x, 3)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYWxhXCIgIFwiYmVsYVwiIFwiYWxhXCIgIFwiYmVsYVwiIFwiYWxhXCIgIFwiYmVsYVwiXG4ifQ== -->
-<pre><code>[1] &quot;ala&quot;  &quot;bela&quot; &quot;ala&quot;  &quot;bela&quot; &quot;ala&quot;  &quot;bela&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVwKHgsIGVhY2g9MykgICAgICAgICMgcG90d8Ozcnoga2HFvGR5IGVsZW1lbnQgMyByYXp5XG5gYGAifQ== -->
-<pre class="r"><code>rep(x, each=3)        # potwórz każdy element 3 razy</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYWxhXCIgIFwiYWxhXCIgIFwiYWxhXCIgIFwiYmVsYVwiIFwiYmVsYVwiIFwiYmVsYVwiXG4ifQ== -->
-<pre><code>[1] &quot;ala&quot;  &quot;ala&quot;  &quot;ala&quot;  &quot;bela&quot; &quot;bela&quot; &quot;bela&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVwKHgsIGxlbmd0aC5vdXQ9NSkgICMgdXR3b3J6ZW5pZSB3ZWt0b3JhIG8gemFkYW5laiBkxYJ1Z2/Fm2NpXG5gYGAifQ== -->
-<pre class="r"><code>rep(x, length.out=5)  # utworzenie wektora o zadanej długości</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYWxhXCIgIFwiYmVsYVwiIFwiYWxhXCIgIFwiYmVsYVwiIFwiYWxhXCIgXG4ifQ== -->
-<pre><code>[1] &quot;ala&quot;  &quot;bela&quot; &quot;ala&quot;  &quot;bela&quot; &quot;ala&quot; </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVwKHgsIHRpbWVzPTMpICAgICAgICMgdG8gc2FtbyBjbyByZXAoeCwgMylcbmBgYCJ9 -->
-<pre class="r"><code>rep(x, times=3)       # to samo co rep(x, 3)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYWxhXCIgIFwiYmVsYVwiIFwiYWxhXCIgIFwiYmVsYVwiIFwiYWxhXCIgIFwiYmVsYVwiXG4ifQ== -->
-<pre><code>[1] &quot;ala&quot;  &quot;bela&quot; &quot;ala&quot;  &quot;bela&quot; &quot;ala&quot;  &quot;bela&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Kombinacja dwóch wektorów</p>
-<p>a[1] -&gt; b[1], b[2], b[3], b[4], b[5], b[6], a[2] -&gt; b[1], b[2],
-b[3], b[4], b[5], b[6], …..</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuelxuXG5gYGAifQ== -->
-<pre class="r"><code>z
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkeGwpXG5cbmBgYCJ9 -->
+<pre class="r"><code>library(readxl)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcImFsYTFcIiAgIFwiYWxhLTFcIiAgXCJhbGEwXCIgICBcImFsYTZcIiAgIFwiYWxhOFwiICAgXCJhbGE0XCIgICBcImJlbGExXCIgIFwiYmVsYS0xXCIgXCJiZWxhMFwiICBcImJlbGE2XCIgIFwiYmVsYThcIiAgXCJiZWxhNFwiIFxuIn0= -->
-<pre><code> [1] &quot;ala1&quot;   &quot;ala-1&quot;  &quot;ala0&quot;   &quot;ala6&quot;   &quot;ala8&quot;   &quot;ala4&quot;   &quot;bela1&quot;  &quot;bela-1&quot; &quot;bela0&quot;  &quot;bela6&quot;  &quot;bela8&quot;  &quot;bela4&quot; </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Formatowanie tekstu (patrz format w Pythonie)</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3ByaW50ZihcIkluZGVrcyBlbGVtZW50dSAlZCAtIGVsZW1lbnQ6ICVzXCIsZWxlbWVudCwgeltlbGVtZW50XSlcblxuYGBgIn0= -->
-<pre class="r"><code>sprintf(&quot;Indeks elementu %d - element: %s&quot;,element, z[element])
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiSW5kZWtzIGVsZW1lbnR1IDUgLSBlbGVtZW50OiBhbGE4XCJcbiJ9 -->
-<pre><code>[1] &quot;Indeks elementu 5 - element: ala8&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KHNwcmludGYoXCIlZCAtICUzLjBmXCIsYygxLDIsMyw0LDUsNiw3LDgsOSksIGMoMSwyLDMsNCw1LDYsNyw4LDkpICogMiApLCBzZXAgPSAnXFxuJylcblxuYGBgIn0= -->
-<pre class="r"><code>cat(sprintf(&quot;%d - %3.0f&quot;,c(1,2,3,4,5,6,7,8,9), c(1,2,3,4,5,6,7,8,9) * 2 ), sep = &#39;\n&#39;)
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiMSAtICAgMlxuMiAtICAgNFxuMyAtICAgNlxuNCAtICAgOFxuNSAtICAxMFxuNiAtICAxMlxuNyAtICAxNFxuOCAtICAxNlxuOSAtICAxOFxuIn0= -->
-<pre><code>1 -   2
-2 -   4
-3 -   6
-4 -   8
-5 -  10
-6 -  12
-7 -  14
-8 -  16
-9 -  18</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Użycie biblioteki stringi</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Porównywanie tekstów</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyaW5naTo6c3RyaV9jb21wYXJlKFwiYWxhXCIsXCJhbGFcIikgIyAgIDAgIC0gYTEgPT0gYTJcbmBgYCJ9 -->
-<pre class="r"><code>stringi::stri_compare(&quot;ala&quot;,&quot;ala&quot;) #   0  - a1 == a2</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDBcbiJ9 -->
-<pre><code>[1] 0</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyaW5naTo6c3RyaV9jb21wYXJlKFwiYWxhXCIsXCJibGFcIikgIyAgLTEgIC0gYTEgPCBhMlxuYGBgIn0= -->
-<pre class="r"><code>stringi::stri_compare(&quot;ala&quot;,&quot;bla&quot;) #  -1  - a1 &lt; a2</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIC0xXG4ifQ== -->
-<pre><code>[1] -1</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyaW5naTo6c3RyaV9jb21wYXJlKFwiYmxhXCIsXCJhbGFcIikgIyAgIDEgIC0gYTEgPiBhMlxuYGBgIn0= -->
-<pre class="r"><code>stringi::stri_compare(&quot;bla&quot;,&quot;ala&quot;) #   1  - a1 &gt; a2</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDFcbiJ9 -->
-<pre><code>[1] 1</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiT3N0cnplxbxlbmllOiBwYWtpZXQg4oCYcmVhZHhs4oCZIHpvc3RhxYIgemJ1ZG93YW55IHcgd2Vyc2ppIFIgNC4zLjJcbiJ9 -->
+<pre><code>Ostrzeżenie: pakiet ‘readxl’ został zbudowany w wersji R 4.3.2</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyaV9leHRyYWN0X2FsbF9yZWdleCh4LFwiYWxhXCIpXG5cbmBgYCJ9 -->
-<pre class="r"><code>stri_extract_all_regex(x,&quot;ala&quot;)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZXhjZWxfc2hlZXRzKHBsaWtfeGxzeClcblxuYGBgIn0= -->
+<pre class="r"><code>excel_sheets(plik_xlsx)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cblsxXSBcImFsYVwiXG5cbltbMl1dXG5bMV0gTkFcbiJ9 -->
-<pre><code>[[1]]
-[1] &quot;ala&quot;
-
-[[2]]
-[1] NA</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiZGF0MVwiIFwiZGF0MlwiXG4ifQ== -->
+<pre><code>[1] &quot;dat1&quot; &quot;dat2&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MiwibmNvbCI6MTUsInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMiDDlyAxNSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJxV1R6VTdiUUJESE4wNWNGRXMwa2ZvQ2ZvRkVPQ1lmM0l5RXVBQ2lha0dLMUNLMGRwWjJpVmxIdHFNRUxuQUFWWDJDaXZiV3grZ1YwbFA3REwzMTFCdDN3cXpqSGNVcmNlcElhLy8yUHgrZXNkZHZ0dnF1MWJjSUlXVlNLWmRJMlFRazV1SEJkcU5IU01XQVRZbFVTRlhlcHhEMENxQUdxdzdMeUIyVjFsckxMWERSWDNiYm5XVlVYbklsSmVlTXM0VGYzd1Iyd3g1UXdXeEJZNXFrOUJRa0JscklSNXhKWjhKWkREaTcvby9FWWwrOWJtc1ppOTY2b0JjVGFvL2lhREFlcG1QYmVVYlg4MTQ2YTh2MmpGck1lZkY2Zi9mdHpxYTIwN3Axbks3NkVtM3RIVlluTkU2ajJiZjdUeWdrUXpyN0lmaFFQbHRHZXQvL25FanozcC9mZ24xRi9jdGx0dmVPZm1aKzFJTTdWNXAza0dSMzFLZWZGL0h2L3YwQys0MzY4ZTFDMy90YnJFUERMTTdyUCtSMUNvZktGUFNNSmZrNHRWdzBxSVBVUW5LUjFwSGFTQjJrTGxJUGFVT1JqNVY5ck94alpSOHIrMWpaNzJndFYrTm8wbFJ0cjhxUUs3ak01L05IZmJZZ3BJbWFUWW5XZ0thMGVSSkRQdXowbEpWb2xQSklRSkloL3pSVFN5N0ZtbEFmQzluSm9CRjhISXRoWTEwZVJpdnpMMncxWjJPSmE0dG5Hdk84bHFtT0hSTWZ1R0NxK1pENkxGU25GMGJPSm02T1lpNVNOUXFvU1RPTlVxcmlyQ0FLbFpJTlJ4NmZBRTRrd1dSaEJBQUEifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["a1"],"name":[1],"type":["chr"],"align":["left"]},{"label":["a2"],"name":[2],"type":["chr"],"align":["left"]},{"label":["a3"],"name":[3],"type":["chr"],"align":["left"]},{"label":["a4"],"name":[4],"type":["chr"],"align":["left"]},{"label":["a5"],"name":[5],"type":["chr"],"align":["left"]},{"label":["a6"],"name":[6],"type":["chr"],"align":["left"]},{"label":["a7"],"name":[7],"type":["chr"],"align":["left"]},{"label":["a8"],"name":[8],"type":["chr"],"align":["left"]},{"label":["a9"],"name":[9],"type":["chr"],"align":["left"]},{"label":["b1"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["b2"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["b3"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["b4"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["b5"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["b6"],"name":[15],"type":["dbl"],"align":["right"]}],"data":[{"1":"2023","2":"356","3":"miesiąc - dane narastające - lipiec - sierpień","4":"872","5":"nazwa produktu 1","6":"10000000000000","7":"POLSKA","8":"117","9":"wartość","10":"2415.7","11":"1503.9","12":"158.1","13":"392.6","14":"126.4","15":"139.4"},{"1":"2023","2":"356","3":"miesiąc - dane narastające - lipiec - sierpień","4":"872","5":"nazwa produktu 2","6":"10000000000000","7":"POLSKA","8":"5","9":"wskaźnik","10":"113.9","11":"119.1","12":"81.8","13":"111.7","14":"59.8","15":"99.8"}],"options":{"columns":{"min":{},"max":[10],"total":[15]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="zmiana-naz-i-wybór-niektórych-kolumn-z-dokumentu-xlsx" class="section level1">
+<h1>zmiana naz i wybór niektórych kolumn z dokumentu xlsx</h1>
+</div>
+<div id="możliwe-typy---skip-guess-logical-numeric-date-text-list" class="section level1">
+<h1>możliwe typy -&gt; “skip”, “guess”, “logical”, “numeric”, “date”,
+“text”, “list”</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MiwibmNvbCI6Mywic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIyIMOXIDMiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFCbDFRMFdyQ01CUzlUWm9WQzRxdzcyaloyaWsrK2pEMkFjT0JieEpycDJVMWtUU3l3UmpidCt3SDlySVAyeGRZYjJyQ05JRWs1OTV6enoyNWVieWY1L0U4QmdBS0lRMkFNb1RBbm1ZUHlRUWdKQmdFRUVMUDNHOVlkTjFWQWd4eEUwdUUyVTJXWCtCTG51YWo4VGtFR0JqMjg4OVlSZC9UbWZxSlBuN2ZQVHNtK0xac2JDdnE5SHh4K3c4ekI1ZUwzRlAzbEh4TlhZZStzZnZDbzIzYmcyOVQxTHh4Tmk0WnI3am02Yk5DUFVhK0pKSTdYVW1CSW1LK2czbmlRSG1KNFY2WWw2eVNZck1YTDhuNHpqaDAvR24xTFNabm1KNDhTV3Q3TWR2cnFoVHJTcFR1OFRWZmxyVU5Camh5TjNHNlU1WFFiaFRNTnFtV21ydTZ1SkMxeTNURHdlRUl4TldlSVFZQ0FBQT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["a_1"],"name":[1],"type":["chr"],"align":["left"]},{"label":["a_2"],"name":[2],"type":["chr"],"align":["left"]},{"label":["b_3"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2023","2":"356","3":"NA"},{"1":"2023","2":"356","3":"81.79193"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="wybór-niektórych-wierszy" class="section level1">
+<h1>Wybór niektórych wierszy</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MywibmNvbCI6MTUsInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMyDDlyAxNSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJzVlV2Mi9UUUJRK3h6RWxrZHBFeXRMUi8wQ2kybWthdzJTa3Fnc2dFRDlFSklicW5CemxpSHVPN0RPSnFnNGRpRkFseEY3NEsxaVptdzMrQmhpWkdCaVJhTGlML1hJOWl5QjE2cE1zZisvNzNydm43K3p6bzkxZXU5cXJJb1JNVkRZTlpGb0NJdXZwazcybWgxQzVKQklEbFZGRjNpZWlxQ0ZBVFZ6MXJHTWhsTjB0dDcwUzY3V0dDd0Nxak8xbENUcVJoSE5JU1VMUHAzMjdhUTh3SXpiRE1VNDRmaVVvSXJpUWppaVJZa0pKTE9Ec3pYVTBhcTVNcit1dWdIcGhuZUdqTWJaSGNUUkloenkxM1JXOHM3SmVYMi9EMmJvY1YyTDFsVzQ4ZkhEdjhkMDcvODBLcjdJRFBoMm5xemo5WlZiR3lSRFBQak02WEJJNDV0SHM0L25iZjFTZ0RkbnFveXo4bS9tOWppQXkvWjJkOGFlNVB2MnU2enpuMDJ3bC8vV0pyai8vK2J2emJmYmVuNXllaWZnQStWSy8vMk42UE5uODZ1K2ZaWHFlTC9YZXI4YnQ5ck5QUGc2L3lJQzhjRjRzaGc5Smt1OUhEZllLN3pzS3VncTJGZHhXc0tQZ2pvSmRCVDBGYndFTTFJaEFqUWpVaUVDTkNOU0lRSXpRSFZUaWFOd0NGK3ZpS3NtTm5NL25mNHBXK3lGT3dDcVExUUhtdVBVaUZ2MGl1eWkwckVValRpTW1ta3J5bjJJVm1vMjRRTlJUSnA5azBPeS9UTm13NlhseXdrTFBZajNINWlWY3kyYVc1dmxhRm56UGhCMVFSdURoUXh5UUVBNkpzTHh3M0JyRmxIR3dJdGlreFNPT29hN2FqMEpnRnViUXhWOXV3OE54U3dVQUFBPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["a_1"],"name":[1],"type":["chr"],"align":["left"]},{"label":["a_2"],"name":[2],"type":["chr"],"align":["left"]},{"label":["a_3"],"name":[3],"type":["chr"],"align":["left"]},{"label":["a_4"],"name":[4],"type":["chr"],"align":["left"]},{"label":["a_5"],"name":[5],"type":["chr"],"align":["left"]},{"label":["a_6"],"name":[6],"type":["chr"],"align":["left"]},{"label":["a_7"],"name":[7],"type":["chr"],"align":["left"]},{"label":["a_8"],"name":[8],"type":["chr"],"align":["left"]},{"label":["a_9"],"name":[9],"type":["chr"],"align":["left"]},{"label":["b_1"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["b_2"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["b_3"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["b_4"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["b_5"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["b_6"],"name":[15],"type":["dbl"],"align":["right"]}],"data":[{"1":"2023","2":"2","3":"miesiąc - dane narastające - lipiec - sierpień","4":"872","5":"nazwa produktu 2","6":"10000000000000","7":"POLSKA","8":"5","9":"wskaźnik","10":"2","11":"900","12":"320","13":"111.734","14":"59.81657","15":"99.78242"},{"1":"2023","2":"3","3":"miesiąc - dane narastające - lipiec - sierpień","4":"872","5":"nazwa produktu 1","6":"10000000000000","7":"POLSKA","8":"117","9":"wartość","10":"3","11":"800","12":"340","13":"392.600","14":"126.40000","15":"139.40000"},{"1":"2023","2":"4","3":"miesiąc - dane narastające - lipiec - sierpień","4":"872","5":"nazwa produktu 2","6":"10000000000000","7":"POLSKA","8":"5","9":"wskaźnik","10":"4","11":"700","12":"360","13":"111.734","14":"59.81657","15":"99.78242"}],"options":{"columns":{"min":{},"max":[10],"total":[15]},"rows":{"min":[10],"max":[10],"total":[3]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sWzFdXG5cbmBgYCJ9 -->
+<pre class="r"><code>col[1]
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYV8xXCJcbiJ9 -->
+<pre><code>[1] &quot;a_1&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Wygenerowania zapytania UPDATE dla wiersza</p>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2llIDwtIGRmWzEsXVxuaSA8LSAwXG50ZWtzdCA8LSBcIlVQREFURSB0YWJlbGEgU0VUIFwiXG5mb3IgKGtvbCBpbiBjb2wpIHtcbiAgaSA8LSBpICsgMVxuICBtIDwtIHNwcmludGYoXCIlcyA9ICclcydcIixjb2xbaV0sIHdpZVtpXSlcbiAgaWYgKGk9PTEpIHsgdGVrc3QgPC0gcGFzdGUodGVrc3QsIG0pICB9XG4gIGVsc2Uge1xuICAgIHRla3N0IDwtIHBhc3RlKHRla3N0LCBtLCBzZXA9XCIsIFwiKVxuICB9XG59XG50ZWtzdCA8LSBwYXN0ZSh0ZWtzdCwgXCIgV0hFUkUgd2FydW5la1wiKVxudGVrc3RcbmBgYCJ9 -->
+<pre class="r"><code>wie &lt;- df[1,]
+i &lt;- 0
+tekst &lt;- &quot;UPDATE tabela SET &quot;
+for (kol in col) {
+  i &lt;- i + 1
+  m &lt;- sprintf(&quot;%s = &#39;%s&#39;&quot;,col[i], wie[i])
+  if (i==1) { tekst &lt;- paste(tekst, m)  }
+  else {
+    tekst &lt;- paste(tekst, m, sep=&quot;, &quot;)
+  }
+}
+tekst &lt;- paste(tekst, &quot; WHERE warunek&quot;)
+tekst</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVVBEQVRFIHRhYmVsYSBTRVQgIGFfMSA9ICcyMDIzJywgYV8yID0gJzInLCBhXzMgPSAnbWllc2nEhWMgLSBkYW5lIG5hcmFzdGFqxIVjZSAtIGxpcGllYyAtIHNpZXJwaWXFhCcsIGFfNCA9ICc4NzInLCBhXzUgPSAnbmF6d2EgcHJvZHVrdHUgMicsIGFfNiA9ICcxMDAwMDAwMDAwMDAwMCcsIGFfNyA9ICdQT0xTS0EnLCBhXzggPSAnNScsIGFfOSA9ICd3c2thxbpuaWsnLCBiXzEgPSAnMicsIGJfMiA9ICc5MDAnLCBiXzMgPSAnMzIwJywgYl80ID0gJzExMS43MzQwMjE2MzM2NTEnLCBiXzUgPSAnNTkuODE2NTczNjc1NzY3JywgYl82ID0gJzk5Ljc4MjQyMzU0NDA2MjgnICBXSEVSRSB3YXJ1bmVrXCJcbiJ9 -->
+<pre><code>[1] &quot;UPDATE tabela SET  a_1 = &#39;2023&#39;, a_2 = &#39;2&#39;, a_3 = &#39;miesiąc - dane narastające - lipiec - sierpień&#39;, a_4 = &#39;872&#39;, a_5 = &#39;nazwa produktu 2&#39;, a_6 = &#39;10000000000000&#39;, a_7 = &#39;POLSKA&#39;, a_8 = &#39;5&#39;, a_9 = &#39;wskaźnik&#39;, b_1 = &#39;2&#39;, b_2 = &#39;900&#39;, b_3 = &#39;320&#39;, b_4 = &#39;111.734021633651&#39;, b_5 = &#39;59.816573675767&#39;, b_6 = &#39;99.7824235440628&#39;  WHERE warunek&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Wygenerowania zapytania INSERT dla wiersza</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2llIDwtIGRmWzEsXVxuaSA8LSAwXG50ZWtzdCA8LSBcIklOU0VSVCBJTlRPIHRhYmVsYSAoXCJcbmZvciAoa29sIGluIGNvbCkge1xuICBpIDwtIGkgKyAxXG4gIG0gPC0gY29sW2ldXG4gIGlmIChpPT0xKSB7IHRla3N0IDwtIHBhc3RlKHRla3N0LCBtKSAgfVxuICBlbHNlIHtcbiAgICB0ZWtzdCA8LSBwYXN0ZSh0ZWtzdCwgbSwgc2VwPVwiLCBcIilcbiAgfVxufVxudGVrc3QgPC0gcGFzdGUodGVrc3QsIFwiKSBWQUxVRSAoXCIpXG5pIDwtIDBcbmZvciAoa29sIGluIGNvbCkge1xuICBpIDwtIGkgKyAxXG4gIG0gPC0gcGFzdGUoXCInXCIsd2llW2ldLFwiJ1wiLCBzZXA9XCJcIilcbiAgaWYgKGk9PTEpIHsgdGVrc3QgPC0gcGFzdGUodGVrc3QsIG0pICB9XG4gIGVsc2Uge1xuICAgIHRla3N0IDwtIHBhc3RlKHRla3N0LCBtLCBzZXA9XCIsIFwiKVxuICB9XG59XG50ZWtzdCA8LSBwYXN0ZSh0ZWtzdCwgXCIpXCIpXG50ZWtzdFxuYGBgIn0= -->
+<pre class="r"><code>wie &lt;- df[1,]
+i &lt;- 0
+tekst &lt;- &quot;INSERT INTO tabela (&quot;
+for (kol in col) {
+  i &lt;- i + 1
+  m &lt;- col[i]
+  if (i==1) { tekst &lt;- paste(tekst, m)  }
+  else {
+    tekst &lt;- paste(tekst, m, sep=&quot;, &quot;)
+  }
+}
+tekst &lt;- paste(tekst, &quot;) VALUE (&quot;)
+i &lt;- 0
+for (kol in col) {
+  i &lt;- i + 1
+  m &lt;- paste(&quot;&#39;&quot;,wie[i],&quot;&#39;&quot;, sep=&quot;&quot;)
+  if (i==1) { tekst &lt;- paste(tekst, m)  }
+  else {
+    tekst &lt;- paste(tekst, m, sep=&quot;, &quot;)
+  }
+}
+tekst &lt;- paste(tekst, &quot;)&quot;)
+tekst</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiSU5TRVJUIElOVE8gdGFiZWxhICggYV8xLCBhXzIsIGFfMywgYV80LCBhXzUsIGFfNiwgYV83LCBhXzgsIGFfOSwgYl8xLCBiXzIsIGJfMywgYl80LCBiXzUsIGJfNiApIFZBTFVFICggJzIwMjMnLCAnMicsICdtaWVzacSFYyAtIGRhbmUgbmFyYXN0YWrEhWNlIC0gbGlwaWVjIC0gc2llcnBpZcWEJywgJzg3MicsICduYXp3YSBwcm9kdWt0dSAyJywgJzEwMDAwMDAwMDAwMDAwJywgJ1BPTFNLQScsICc1JywgJ3dza2HFum5paycsICcyJywgJzkwMCcsICczMjAnLCAnMTExLjczNDAyMTYzMzY1MScsICc1OS44MTY1NzM2NzU3NjcnLCAnOTkuNzgyNDIzNTQ0MDYyOCcgKVwiXG4ifQ== -->
+<pre><code>[1] &quot;INSERT INTO tabela ( a_1, a_2, a_3, a_4, a_5, a_6, a_7, a_8, a_9, b_1, b_2, b_3, b_4, b_5, b_6 ) VALUE ( &#39;2023&#39;, &#39;2&#39;, &#39;miesiąc - dane narastające - lipiec - sierpień&#39;, &#39;872&#39;, &#39;nazwa produktu 2&#39;, &#39;10000000000000&#39;, &#39;POLSKA&#39;, &#39;5&#39;, &#39;wskaźnik&#39;, &#39;2&#39;, &#39;900&#39;, &#39;320&#39;, &#39;111.734021633651&#39;, &#39;59.816573675767&#39;, &#39;99.7824235440628&#39; )&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpPcGVyYWNqZSBuYSDFgmHFhGN1Y2hhY2ggem5ha8Ozdw0KDQpgYGB7cn0NCmEgPC0gYiA8LSAiVVMgT2xzenR5biINCg0KdGVrc3QgPC0gJ0FsYSBNQSBrb3RhJw0KY2xhc3ModGVrc3QpDQpgYGANClphbWlhbmEgxYJhxYRjdWNoYSB6bmFrw7N3IG5hIHdla3RvciB6bmFrw7N3IGkgd3nFm3dpZXRsZW5pZSBpY2ggeiBpbmRla3NlbQ0KYGBge3J9DQp4IDwtIHVubGlzdChzdHJzcGxpdCh0ZWtzdCwgJycpKQ0KaW5kIDwtIDANCmZvciAoeCBpbiB4KSB7DQogIGluZCA8LSBpbmQgKyAxDQogIHByaW50KHBhc3RlKGluZCwgeCkpDQp9DQoNCmBgYA0KbHViDQoNCmBgYHtyfQ0KeCA8LSB1bmxpc3Qoc3Ryc3BsaXQodGVrc3QsICcnKSkNCmZvciAoaW5kIGluIDE6bGVuZ3RoKHgpKSB7DQogICBwcmludChwYXN0ZShpbmQsIHhbaW5kXSkpDQp9DQpgYGANCg0KDQpQb2R6aWHFgiB0ZWtzdHUgbmEgbGl0ZXJhxYJ5IChzxYJvd2EpDQpgYGB7cn0NCnkgPC0gdW5saXN0KHN0cnNwbGl0KHRla3N0LCAnICcpKQ0KeVsxXQ0KeVsyXQ0KeVszXQ0KYGBgDQoNCg0KYGBge3J9DQp0b3VwcGVyKHRla3N0KSAgIyB6bWlhbmEgbmEgd2llbGtpZSBsaXRlcnkNCnRvbG93ZXIodGVrc3QpICAjIHptaWFuYSBuYSBtYcWCZSBsaXRlcnkNCmBgYA0KYGBge3J9DQpnc3ViKCcgJywgJ18nLCB0ZWtzdCkgICAjIHphbWlhbmEgem5ha3UgbmEgaW5ueSB6bmFrDQpgYGANCg0KDQpgYGB7cn0NCnogPC0gYygiYWxhIiwgIm1hIiwgImtvdGEiKQ0KY2xhc3MoeikNCnByaW50KHpbMV0pDQpwcmludCh6WzJdKQ0KcHJpbnQoelszXSkNCmBgYA0KDQpSZXBsaWthY2phIHdla3RvcmENCg0KYGBge3J9DQp4IDwtIGMoImFsYSIsICJiZWxhIikNCnJlcCh4LCAzKQ0KcmVwKHgsIGVhY2g9MykgICAgICAgICMgcG90d8Ozcnoga2HFvGR5IGVsZW1lbnQgMyByYXp5DQpyZXAoeCwgbGVuZ3RoLm91dD01KSAgIyB1dHdvcnplbmllIHdla3RvcmEgbyB6YWRhbmVqIGTFgnVnb8WbY2kNCnJlcCh4LCB0aW1lcz0zKSAgICAgICAjIHRvIHNhbW8gY28gcmVwKHgsIDMpDQpgYGANCg0KS29tYmluYWNqYSBkd8OzY2ggd2VrdG9yw7N3DQoNCmFbMV0gLT4gYlsxXSwgYlsyXSwgYlszXSwgYls0XSwgYls1XSwgYls2XSwgIGFbMl0gLT4gYlsxXSwgYlsyXSwgYlszXSwgYls0XSwgYls1XSwgYls2XSwgICAgIC4uLi4uICAgDQoNCmBgYHtyfQ0KeCA8LSBjKCJrdXJhIiwgImthY3prYSIpDQp5IDwtIGMoMSwtMSwwLDYsOCw0KSANCnogPC0gcGFzdGUocmVwKHgsIGVhY2g9bGVuZ3RoKHkpKSwgcmVwKHksIHRpbWVzPWxlbmd0aCh4KSksIHNlcD0nJyApDQp6DQpgYGANCg0KRm9ybWF0b3dhbmllIHRla3N0dSAocGF0cnogZm9ybWF0IHcgUHl0aG9uaWUpDQoNCmBgYHtyfQ0KZWxlbWVudCA8LSA1DQpzcHJpbnRmKCJJbmRla3MgZWxlbWVudHU6ICVkIC0gZWxlbWVudDogJXMiLGVsZW1lbnQsIHpbZWxlbWVudF0pDQpgYGANCmBgYHtyfQ0KY2F0KHNwcmludGYoIiVkIC0gJTMuMGYiLGMoMSwyLDMsNCw1LDYsNyw4LDkpLCBjKDEsMiwzLDQsNSw2LDcsOCw5KSAqIDIgKSwgc2VwID0gJ1xuJykNCmBgYA0KDQpVxbx5Y2llIGJpYmxpb3Rla2kgc3RyaW5naQ0KDQpgYGB7cn0NCmxpYnJhcnkoc3RyaW5naSkNCmBgYA0KDQpQb3LDs3dueXdhbmllIHRla3N0w7N3DQoNCmBgYHtyfQ0Kc3RyaW5naTo6c3RyaV9jb21wYXJlKCJhbGEiLCJhbGEiKSAjICAgMCAgLSBhMSA9PSBhMg0Kc3RyaW5naTo6c3RyaV9jb21wYXJlKCJhbGEiLCJibGEiKSAjICAtMSAgLSBhMSA8IGEyDQpzdHJpbmdpOjpzdHJpX2NvbXBhcmUoImJsYSIsImFsYSIpICMgICAxICAtIGExID4gYTINCg0KYGBgDQoNCmBgYHtyfQ0KdGVrc3QNCnN0cmlfZXh0cmFjdF9hbGxfcmVnZXgoeCwiYWxhIikNCmBgYA0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpPYnPFgnVnYSBkYW55Y2ggcGxpa293eXZoDQoNCg0KT2JzxYJ1Z2EgYXJrdXN6YSB4bHN4DQoNCiMgaW5zdGFsbC5wYWNrYWdlcygicmVhZHhsIikNCg0KYGBge3J9DQpsaWJyYXJ5KHJlYWR4bCkNCnBsaWtfeGxzeCA8LSAiLi90ZXN0b3dlLnhsc3giDQpgYGANCg0KYGBge3J9DQpleGNlbF9zaGVldHMocGxpa194bHN4KQ0KYGBgDQpgYGB7cn0NCmRmIDwtIHJlYWRfeGxzeChwYXRoID0gcGxpa194bHN4KQ0KZGYkYjEgPC0gcm91bmQoZGYkYjEsMSkNCmRmJGIyIDwtIHJvdW5kKGRmJGIyLDEpDQpkZiRiMyA8LSByb3VuZChkZiRiMywxKQ0KZGYkYjQgPC0gcm91bmQoZGYkYjQsMSkNCmRmJGI1IDwtIHJvdW5kKGRmJGI1LDEpDQpkZiRiNiA8LSByb3VuZChkZiRiNiwxKQ0KZGYNCmBgYA0KDQojIHptaWFuYSBuYXogaSB3eWLDs3Igbmlla3TDs3J5Y2gga29sdW1uIHogZG9rdW1lbnR1IHhsc3gNCiMgbW/FvGxpd2UgdHlweSAtPiAic2tpcCIsICJndWVzcyIsICJsb2dpY2FsIiwgIm51bWVyaWMiLCAiZGF0ZSIsICJ0ZXh0IiwgImxpc3QiDQpgYGB7cn0NCmNvbHVtbnMgPC0gYygiYV8xIiwiYV8yIiwiYV8zIiwiYV80IiwiYV81IiwiYV82IiwiYV83IiwiYV84IiwiYV85IiwiYl8xIiwiYl8yIiwiYl8zIiwiYl80IiwiYl81IiwiYl82IikNCnR5cGVzIDwtIGMoImd1ZXNzIiwiZ3Vlc3MiLCJza2lwIiwic2tpcCIsInNraXAiLCJza2lwIiwic2tpcCIsInNraXAiLCJza2lwIiwic2tpcCIsInNraXAiLCJndWVzcyIsInNraXAiLCJza2lwIiwic2tpcCIpDQoNCmRmIDwtIHJlYWRfeGxzeChwYXRoID0gcGxpa194bHN4LCBzaGVldCA9ICJkYXQyIiwgY29sX25hbWVzID0gY29sdW1ucywgc2tpcCA9IDIsIGNvbF90eXBlcyA9IHR5cGVzICkgDQpkZg0KYGBgDQoNCiMgV3liw7NyIG5pZWt0w7NyeWNoIHdpZXJzenkgDQoNCmBgYHtyfQ0KY29sdW1ucyA8LSBjKCJhXzEiLCJhXzIiLCJhXzMiLCJhXzQiLCJhXzUiLCJhXzYiLCJhXzciLCJhXzgiLCJhXzkiLCJiXzEiLCJiXzIiLCJiXzMiLCJiXzQiLCJiXzUiLCJiXzYiKQ0KZGYgPC0gcmVhZF94bHN4KHBhdGggPSBwbGlrX3hsc3gsIHNoZWV0ID0gImRhdDMiLCBjb2xfbmFtZXMgPSBjb2x1bW5zLCByYW5nZSA9IGNlbGxfcm93cyhjKDMsIDUpKSApIA0KZGYNCmBgYA0KYGBge3J9DQpjb2wgPC0gY29sbmFtZXMoZGYpDQpjb2xbMV0NCmBgYA0KV3lnZW5lcm93YW5pYSB6YXB5dGFuaWEgVVBEQVRFIGRsYSB3aWVyc3phIA0KDQpgYGB7cn0NCndpZSA8LSBkZlsxLF0NCmkgPC0gMA0KdGVrc3QgPC0gIlVQREFURSB0YWJlbGEgU0VUICINCmZvciAoa29sIGluIGNvbCkgew0KICBpIDwtIGkgKyAxDQogIG0gPC0gc3ByaW50ZigiJXMgPSAnJXMnIixjb2xbaV0sIHdpZVtpXSkNCiAgaWYgKGk9PTEpIHsgdGVrc3QgPC0gcGFzdGUodGVrc3QsIG0pICB9DQogIGVsc2Ugew0KICAgIHRla3N0IDwtIHBhc3RlKHRla3N0LCBtLCBzZXA9IiwgIikNCiAgfQ0KfQ0KdGVrc3QgPC0gcGFzdGUodGVrc3QsICIgV0hFUkUgd2FydW5layIpDQp0ZWtzdA0KYGBgDQoNCld5Z2VuZXJvd2FuaWEgemFweXRhbmlhIElOU0VSVCBkbGEgd2llcnN6YSANCg0KYGBge3J9DQp3aWUgPC0gZGZbMSxdDQppIDwtIDANCnRla3N0IDwtICJJTlNFUlQgSU5UTyB0YWJlbGEgKCINCmZvciAoa29sIGluIGNvbCkgew0KICBpIDwtIGkgKyAxDQogIG0gPC0gY29sW2ldDQogIGlmIChpPT0xKSB7IHRla3N0IDwtIHBhc3RlKHRla3N0LCBtKSAgfQ0KICBlbHNlIHsNCiAgICB0ZWtzdCA8LSBwYXN0ZSh0ZWtzdCwgbSwgc2VwPSIsICIpDQogIH0NCn0NCnRla3N0IDwtIHBhc3RlKHRla3N0LCAiKSBWQUxVRSAoIikNCmkgPC0gMA0KZm9yIChrb2wgaW4gY29sKSB7DQogIGkgPC0gaSArIDENCiAgbSA8LSBwYXN0ZSgiJyIsd2llW2ldLCInIiwgc2VwPSIiKQ0KICBpZiAoaT09MSkgeyB0ZWtzdCA8LSBwYXN0ZSh0ZWtzdCwgbSkgIH0NCiAgZWxzZSB7DQogICAgdGVrc3QgPC0gcGFzdGUodGVrc3QsIG0sIHNlcD0iLCAiKQ0KICB9DQp9DQp0ZWtzdCA8LSBwYXN0ZSh0ZWtzdCwgIikiKQ0KdGVrc3QNCmBgYA0K</div>
 
 
 
@@ -2222,7 +1932,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("zmienne.Rmd");
+  window.initializeSourceEmbed("obsługa_plików.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
