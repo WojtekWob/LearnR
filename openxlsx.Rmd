@@ -18,8 +18,17 @@ saveWorkbook(wb, "a.xlsx", overwrite = TRUE)
 
 ```{r}
 as <- activeSheet(wb) 
-as
+sh <- names(wb)
+lsh <- sh == "S3"
+indeks_pierwszego_true <- which(lsh == TRUE, arr.ind = TRUE)[1]
+indeks_pierwszego_true
+if (any(lsh)) {
+  # jest
+  removeWorksheet(wb, "S3")
+}
+saveWorkbook(wb, "a.xlsx", overwrite = TRUE)
 ```
+
 
 ```{r}
 addCreator(wb, "WW")
@@ -53,6 +62,9 @@ saveWorkbook(wb, "a.xlsx", overwrite = TRUE)
 ```
 
 
+
+Przygotowanie danych dla dalszej części wykorzystanych funkcji
+
 ```{r}
 # colnames(a1) <- c('desc1','mpg1','cyl1','disp1','hp1','drat1','wt1','qsec1','vs1','am1','gear1','carb1') 
 wiersz <- 4
@@ -68,16 +80,17 @@ writeData(wb, "S2", c(1:6), startCol = 5, startRow = 2, rowNames = FALSE, colNam
 posStyle <- createStyle(fontColour = "#006100", bgFill = "#C6EFCE")
 orStyle <- createStyle(fontColour = "white", bgFill = "blue")
 andStyle <- createStyle(fontColour = "white", bgFill = "red")
-saveWorkbook(wb, "a.xlsx", overwrite = TRUE)
+saveWorkbook(wb, "b.xlsx", overwrite = TRUE)
 ```
 
+Wykorzystanie conditionalFormatting (patrz: Formatowanie warunkowe w Excel) dla różnych wariantów
 
 ```{r}
 conditionalFormatting(wb, "S2",
 cols = 4,
 rows = 2:7, rule = " > $H$1", style = posStyle, type = "expression"
 )
-saveWorkbook(wb, nazwa_pliku, overwrite = TRUE)
+saveWorkbook(wb, "b.xlsx", overwrite = TRUE)
 ```
 
 
@@ -86,7 +99,7 @@ conditionalFormatting(wb, "S2",
 cols = 5,
 rows = 2:7, style = posStyle, type = "between", rule = c(2, 4)
 )
-saveWorkbook(wb, nazwa_pliku, overwrite = TRUE)
+saveWorkbook(wb, "b.xlsx", overwrite = TRUE)
 ```
 
 
@@ -95,16 +108,17 @@ conditionalFormatting(wb, "S2",
 cols = 1,
 rows = 2:7, style = posStyle, type = "contains", rule = "Ma"
 )
-saveWorkbook(wb, nazwa_pliku, overwrite = TRUE)
+saveWorkbook(wb, "b.xlsx", overwrite = TRUE)
 ```
 
+Wykorzystanie conditionalFormatting (patrz: Formatowanie warunkowe w Excel) dla warunku logicznego OR i AND
 
 ```{r}
 conditionalFormatting(wb, "S2",
 cols = 4,
 rows = 2:7, rule = "OR($C2=8,$D2=108)", style = orStyle, type = "expression"
 )
-saveWorkbook(wb, nazwa_pliku, overwrite = TRUE)
+saveWorkbook(wb, "b.xlsx", overwrite = TRUE)
 
 ```
 
@@ -113,6 +127,41 @@ conditionalFormatting(wb, "S2",
 cols = 4,
 rows = 2:7, rule = "AND($C2=6,$D2=225)", style = andStyle, type = "expression"
 )
-saveWorkbook(wb, nazwa_pliku, overwrite = TRUE)
+saveWorkbook(wb, "b.xlsx", overwrite = TRUE)
+```
+
+Wyświetla kolumnę z gradientem
+
+```{r}
+writeData(wb, "S2", -3:2, startCol = 6, startRow = 2)
+conditionalFormatting(wb, "S2",
+cols = 6, rows = 2:7,
+type = "databar", style = c("#a6a6a6", "#a6a6a6"), showValue = FALSE, gradient = FALSE
+)
+saveWorkbook(wb, "b.xlsx", overwrite = TRUE)
+```
+
+
+Zaznacza 5 najwyższych wartości z kolumny
+Wykorzystanie serwisu https://colorhunt.co/ do wyboru koloru
+
+```{r}
+addWorksheet(wb, sheetName = "S3")
+```
+
+```{r}
+topStyle <- createStyle(fontColour = "#FFFFFF", bgFill = "#F05941")
+writeData(wb, "S3", data.frame(x = 1:10, y = rnorm(10)))
+conditionalFormatting(wb, "S3", cols = 2, rows = 2:11, style = topStyle, type = "topN", rank = 5)
+saveWorkbook(wb, "b.xlsx", overwrite = TRUE)
+```
+
+Zaznacza 5 najniższych wartości z kolumny
+
+```{r}
+bottomStyle <- createStyle(fontColour = "#000000", bgFill = "#FFF5C2")
+writeData(wb, "S3", data.frame(x = 1:10, y = rnorm(10)))
+conditionalFormatting(wb, "S3", cols = 2, rows = 2:11, style = bottomStyle, type = "bottomN", rank = 5)
+saveWorkbook(wb, "b.xlsx", overwrite = TRUE)
 ```
 

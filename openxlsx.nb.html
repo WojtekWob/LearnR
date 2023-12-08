@@ -1773,13 +1773,23 @@ saveWorkbook(wb, &quot;a.xlsx&quot;, overwrite = TRUE)</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXMgPC0gYWN0aXZlU2hlZXQod2IpIFxuYXNcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXMgPC0gYWN0aXZlU2hlZXQod2IpIFxuc2ggPC0gbmFtZXMod2IpXG5sc2ggPC0gc2ggPT0gXCJTM1wiXG5pbmRla3NfcGllcndzemVnb190cnVlIDwtIHdoaWNoKGxzaCA9PSBUUlVFLCBhcnIuaW5kID0gVFJVRSlbMV1cbmluZGVrc19waWVyd3N6ZWdvX3RydWVcbmBgYCJ9 -->
 <pre class="r"><code>as &lt;- activeSheet(wb) 
-as</code></pre>
+sh &lt;- names(wb)
+lsh &lt;- sh == &quot;S3&quot;
+indeks_pierwszego_true &lt;- which(lsh == TRUE, arr.ind = TRUE)[1]
+indeks_pierwszego_true</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDFcbiJ9 -->
-<pre><code>[1] 1</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDNcbiJ9 -->
+<pre><code>[1] 3</code></pre>
 <!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaWYgKGFueShsc2gpKSB7XG4gICMgamVzdFxuICByZW1vdmVXb3Jrc2hlZXQod2IsIFwiUzNcIilcbn1cbnNhdmVXb3JrYm9vayh3YiwgXCJhLnhsc3hcIiwgb3ZlcndyaXRlID0gVFJVRSlcbmBgYCJ9 -->
+<pre class="r"><code>if (any(lsh)) {
+  # jest
+  removeWorksheet(wb, &quot;S3&quot;)
+}
+saveWorkbook(wb, &quot;a.xlsx&quot;, overwrite = TRUE)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -1795,7 +1805,7 @@ as</code></pre>
 <pre class="r"><code>x &lt;- mtcars[1:6, ]
 x</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6MTEsInN1bW1hcnkiOnsiRGVzY3JpcHRpb24iOlsiZGYgWzYgw5cgMTFdIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQm5WVFBYRFRNQlJXSE50cDdHc0lSNGV5Y0I1WmttdmlGTHB3YU1nQkN3UGxwem5hUmJIZDFGZEhWbVU3L1psWW1KbnBzY0hjaGFVek04eXNNTE93d0ZpUWJUMWZMY3E3VTc3dmZYcWY5SjZTYkk0bnJqV3hFRUpOcERjYnFHa0lpb3pueng3ME5oRFNOWkUwa0k3YU9SNkpvaHVDMkdKMXhETHhPaXFpd2p1ZjgvaUMxM2VMd01PUGJoNTRlUE90aU5QS3R5cnJBYnRLN3RUenl1ZExIWEJiSWlzTmVQR3F4TWlwKzdhbERyaUY2M253cmNTWHVPNjc1cGI5QTNia2ZFdnZ2MXIzMkFmY2xycTVjdkw5NGRsSzVkTi9mWHF6Yy9zM2JzbitOSkVKQ2JmUG4veDRmZXNjMitKRE1HeWZGY2JLdDVhVnZvRlI3Zy9mNWJZZDdMTDh3b05LSDIwVTU0QVBLWEgvWngxVkhYeHFuVnAvUlpSOWR1VmNLaTVkamYvenFmZmlmL3FzL1FBTlN1WkJJa2h1dDZYWW5MTVpVTzg0a2xUM3c0UkpydTJ4U3VVa0JmVVFtSDZRQkI2b2l3UVltY1ArTENBY3VFZjRWR21yemVQRC91WFdUTmg0VEU1ODRteE9SbEpZcmdSbmkwRFgxcGlrU1VhZHU0TTFxWFFleFp3R3FUTnl4anhjQkZLOUx0V25MT1lwbWNZWjlOOTZRYUtRMEZSOUxTOGlDYlFFb3VXVGxQUjN1ZWhXWkJlS3BSV3pOSXlwTUduNS85eFF6QTJ1Q04yTTVuUDdQVzh2by91OWdadmZVT3lYYTFtaWVZbmI1WjNhSDNtV0ljOHlBem9MS1F4clJHUWF3SmZaRVE5Y3ZHK2Y4WkRDMkpaUWszNGFwd1RxTEMrT1FDbUdReGQvQWRVRGtIRGZCQUFBIn0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6MTEsInN1bW1hcnkiOnsiRGVzY3JpcHRpb24iOlsiZGYgWzYgw5cgMTFdIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQm5WVVBYRFRNQlJXSE50cDdHdmFIaDFnNFR5eUpOY21LZTNDb1NFSExBeVVuK1pvRjhWMlV4K09yTXAyQ3AxWW1KbmgyR0R1d3RLWkdXWldtRmxZNk5naTJYcStXcFIzSjMvZis2UlBlazlPdkQwYUQ1eXhneEJxSXJQWlFFMUxVR1E5ZlhLdnU0V1FhWWlrZ1V6VWx2aFNMTG9taUN0R1J3d2JiNkFpS3J6OVZjWTN2TEZmQk81L0hzakEvUnZ2Ukx5dmZOZlZlc0JsTGZmcWVlVUxsQTY0cTVDVkJqeC9YV0xzMVgyN1NnZmN3ZlU4L0ZIaWMxejNMUTNLK2dFN3FyK0ZqOStkTyt3VGJpdmRYajMrZWY5a3RmS1pmNzY4M2J0MWhsdXFQa05rUXNMdDAwZS8zdHc4eGE1NENJYmRrOEpZK2RieTByZHVsZlA5RDlLMmh3ZE1IbmhZNmNPdFloL3dJUzN1L3E2anJvTlBYNmV2dnlMS09wZFZYem91WEkzLzgrbm40bi9xclAwQUxVcG1ZU3FJdEx0S2JNN1lGS2ovS2xiVURLS1VLVzRjc0VybEpBUDFDSmg1bUlZK3FQTVVHSm5CL0RRa0hMaFArRVFycTgyVG85N2wwbXlZZUVpT0ErSnRqNGRLV0t3RWI0ZEExYzZJWkdsT3ZjMzFOYVYwSGlTY2hwazM5RVk4bW9kS1hWSHFZNWJ3akV5U0hPcHZQU054UkdpbTM1WWZreFJLQXRFSlNFWjYrMXhVSzdKenpkSktXQllsVkpnTStUKzNOSE9EYThKU1RtWGZRZGMveU9tTHJ2d0tPTVYwT1JZVjJwZTRXeDVwWEtpdExMV1ZIZEpwUktGWEt5YVRFTjVsUjl4dmNiMDl4aU1LWFR0Q1RYdFpraEZZNS9oSkRFclJHenIvQzJsd2lDN2VCQUFBIn0= -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["mpg"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["cyl"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["disp"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["hp"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["drat"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["wt"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["qsec"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["vs"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["am"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["gear"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["carb"],"name":[11],"type":["dbl"],"align":["right"]}],"data":[{"1":"21.0","2":"6","3":"160","4":"110","5":"3.90","6":"2.620","7":"16.46","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4"},{"1":"21.0","2":"6","3":"160","4":"110","5":"3.90","6":"2.875","7":"17.02","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4 Wag"},{"1":"22.8","2":"4","3":"108","4":"93","5":"3.85","6":"2.320","7":"18.61","8":"1","9":"1","10":"4","11":"1","_rn_":"Datsun 710"},{"1":"21.4","2":"6","3":"258","4":"110","5":"3.08","6":"3.215","7":"19.44","8":"1","9":"0","10":"3","11":"1","_rn_":"Hornet 4 Drive"},{"1":"18.7","2":"8","3":"360","4":"175","5":"3.15","6":"3.440","7":"17.02","8":"0","9":"0","10":"3","11":"2","_rn_":"Hornet Sportabout"},{"1":"18.1","2":"6","3":"225","4":"105","5":"2.76","6":"3.460","7":"20.22","8":"1","9":"0","10":"3","11":"1","_rn_":"Valiant"}],"options":{"columns":{"min":{},"max":[10],"total":[11]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
@@ -1815,7 +1825,7 @@ saveWorkbook(wb, &quot;a.xlsx&quot;, overwrite = TRUE)</code></pre>
 x &lt;- mtcars[1:6, ]
 x</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6MTEsInN1bW1hcnkiOnsiRGVzY3JpcHRpb24iOlsiZGYgWzYgw5cgMTFdIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQm5WVFBYRFRNQlJXSE50cDdHc0lSd2RZT0k4c3lUVS9oUzRjR25MQXdrRDVhWTUyVVd3MzlkV1JYVmxPb1JNTE16TWNHOHhkV0Rvenc4d0tNd3NMakFYWjB2UFZvcnc3NWZ2ZXAvZEo3eW5KMW1RNmNxWU9RcWlKekdZRE5TMUJrZlhrOGQzZUprS21JWklHTWxHN3dPZWk2SW9ncmxnZHNXeThnY3FvOE9ibklyN2dqYjB5OFBEanFBZzh2UFpHeE52S2QxWFZBM2ExM0t2bmxTOVFPdUNPd2xRYThQS2x4TmlyKzNhVURyaU42M240VGVJelhQZGRHc24rQVR0cXZwWDNYNTNiNlFmY1ZycTlkdno5M3NsYTVUTi9mWHE5ZStNM2JxbitESkVKQ2JkUEgvNTRkZjBVdStKRE1PeWVsTWJLdDU1TDM4Q1MrOE4zaFcwWGo5TGl3c05LSDIrVzU0QVBhWEhuWngxMUhYeDZuVjUvUWNnK3Uyb3VIVmN1eHYvNTlIdnhQMzNXZm9BV0pZc3dFNlN3dTBwc0x0STVVUDlGcktnWlJGbXF1TEdmVmlvakhOUWpZT1poRnZxZ0xqTmdaQUg3ODVBdzRENWhNNjJ0Tmt1Tyt1ZGJzMkhqQVRrT2lMYzFIU3RodFJLOGJRSmRPeFBDczV4NnR3YnJTdW5jVHhnTnVUZjJKaXhhaGtxOXJOUkhhY0k0bVNVNTlOOTZTdUtJVUs2L2xoK1RERm9DMFFrSUovMDlKcm9WMlpsbWFTVXBqeElxVEVieFA3YzBjNE5wUWplbnhkeEJ6OS9QNlVGdk1DNXVLUGZsV2xWb24rT3V2TlA0bzg2eTFGbDJTT2NSaFdHdG1NeEMrREk3NG9ITDkrMm5MS0l3dGlQVXJNOFRUcURPOFpNWWxISTRkUFlYZXV0N2c5OEVBQUE9In0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6MTEsInN1bW1hcnkiOnsiRGVzY3JpcHRpb24iOlsiZGYgWzYgw5cgMTFdIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQm5WVFBYRFRNQlJXSE50cDdHdGFyaDFnNFR5eUpOY21hZW5Db1NFSExBeVVuK1pvRjhWMlUxOGRXWlhsdEhSaVlXYUdZNE81QzB0blpwaFpZV1poZ2JFZzIzcStXcFIzcDN6ZisvUSs2VDBsMlI2TkI4N1lRUWcxa2Rsc29LWWxLYktlUHJuWDNVTElOR1RTUUNacTUzZ2lpMVlrY2VYcXlHWGpEVlJFaFp1ZjgvaUNOL2FMd1AyUGd6eHcvOFliR1c4cjMzVlZEN2lzNVY0OXIzeUIwZ0YzRmJMU2dPY3ZTNHk5dW05WDZZQTd1SjZIMzBwOGp1dStwVUhaUDJCSHpiZncvcXR6aDMzQWJhWGJxNmZmNzUrdFZqN3oxNmZYZTdkKzQ1YnF6NUNabEhENy9OR1BWemZQc1NzL0pNUHVXV0dzZkd0WjZWdTN5djMrdTl5Mmh3Y3N2L0NvMG9kYnhUbmdRMXJjL1ZsSFhRZWZYcWZYWHhGbG44dHFMaDBYcnNiLytmUjc4VDk5MW42QUZpV3pNSlVrdDd0S2JNN1lGS2ovSWxiVURLS1VLVzRjc0VybFJJQjZETXc4U2tNZjFIa0tqTXhnZnhvU0R0d25mS0sxMWViSmNlOXlhelpzUENTbkFmRzJ4ME1sTEZhQ3QwT2dhMmRFUkpwUjcvYjZtbEk2RHhKT1ErRU52UkdQNXFGU3J5bjFNVXU0SUpNa2cvNWJ6MGdjRVNyMDEvSmpra0pMSURvQkVhUzN6MlczTXJ2UUxLMkVpU2loMG1Uay8zTkxNemU0Sml4bE5KODc2UG9IR1Qzc2J1WVhGTnZsV2xSb1grSnVlYVh4UngxbHFhUHNrRTRqQ3JOYU1abUU4RjEyNVBzV3o5dGpQS0l3dFNQVnRDY1NRYURPOFpNWWxHSTJkUEVYRHhacWk5NEVBQUE9In0= -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["mpg"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["cyl"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["disp"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["hp"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["drat"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["wt"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["qsec"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["vs"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["am"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["gear"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["carb"],"name":[11],"type":["dbl"],"align":["right"]}],"data":[{"1":"21.0","2":"6","3":"160","4":"110","5":"3.90","6":"2.620","7":"16.46","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4"},{"1":"21.0","2":"6","3":"160","4":"110","5":"3.90","6":"2.875","7":"17.02","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4 Wag"},{"1":"22.8","2":"4","3":"108","4":"93","5":"3.85","6":"2.320","7":"18.61","8":"1","9":"1","10":"4","11":"1","_rn_":"Datsun 710"},{"1":"21.4","2":"6","3":"258","4":"110","5":"3.08","6":"3.215","7":"19.44","8":"1","9":"0","10":"3","11":"1","_rn_":"Hornet 4 Drive"},{"1":"18.7","2":"8","3":"360","4":"175","5":"3.15","6":"3.440","7":"17.02","8":"0","9":"0","10":"3","11":"2","_rn_":"Hornet Sportabout"},{"1":"18.1","2":"6","3":"225","4":"105","5":"2.76","6":"3.460","7":"20.22","8":"1","9":"0","10":"3","11":"1","_rn_":"Valiant"}],"options":{"columns":{"min":{},"max":[10],"total":[11]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
@@ -1842,9 +1852,10 @@ saveWorkbook(wb, &quot;a.xlsx&quot;, overwrite = TRUE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Przygotowanie danych dla dalszej części wykorzystanych funkcji</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjb2xuYW1lcyhhMSkgPC0gYygnZGVzYzEnLCdtcGcxJywnY3lsMScsJ2Rpc3AxJywnaHAxJywnZHJhdDEnLCd3dDEnLCdxc2VjMScsJ3ZzMScsJ2FtMScsJ2dlYXIxJywnY2FyYjEnKSBcbndpZXJzeiA8LSA0XG5uYXp3YV9wbGlrdSA8LSBcImEueGxzeFwiXG53YiA8LSBsb2FkV29ya2Jvb2sobmF6d2FfcGxpa3UpXG5kYW5lIDwtIHJlYWQueGxzeChuYXp3YV9wbGlrdSwgc2hlZXQgPSBcIlMxXCIsIHN0YXJ0Um93PXdpZXJzeiwgY29sTmFtZXM9RkFMU0UsIHNraXBFbXB0eVJvd3MgPSBGQUxTRSwgY29scyA9IGMoMTo1KSlcbmNvbG5hbWVzKGRhbmUpIDwtIGMoJ2Rlc2MxJywnbXBnMScsJ2N5bDEnLCdkaXNwMScpIFxud3JpdGVEYXRhKHdiLCBcIlMyXCIsIGRhbmUsIHN0YXJ0Q29sID0gMSwgc3RhcnRSb3cgPSAxLCByb3dOYW1lcyA9IEZBTFNFLCBjb2xOYW1lcyA9IFRSVUUpXG5cbndyaXRlRGF0YSh3YiwgXCJTMlwiLCBjKDEwOCksIHN0YXJ0Q29sID0gOCwgc3RhcnRSb3cgPSAxLCByb3dOYW1lcyA9IEZBTFNFLCBjb2xOYW1lcyA9IEZBTFNFKVxud3JpdGVEYXRhKHdiLCBcIlMyXCIsIGMoMTo2KSwgc3RhcnRDb2wgPSA2LCBzdGFydFJvdyA9IDIsIHJvd05hbWVzID0gRkFMU0UsIGNvbE5hbWVzID0gRkFMU0UpXG5cbnBvc1N0eWxlIDwtIGNyZWF0ZVN0eWxlKGZvbnRDb2xvdXIgPSBcIiMwMDYxMDBcIiwgYmdGaWxsID0gXCIjQzZFRkNFXCIpXG5vclN0eWxlIDwtIGNyZWF0ZVN0eWxlKGZvbnRDb2xvdXIgPSBcIndoaXRlXCIsIGJnRmlsbCA9IFwiYmx1ZVwiKVxuYW5kU3R5bGUgPC0gY3JlYXRlU3R5bGUoZm9udENvbG91ciA9IFwid2hpdGVcIiwgYmdGaWxsID0gXCJyZWRcIilcbnNhdmVXb3JrYm9vayh3YiwgXCJhLnhsc3hcIiwgb3ZlcndyaXRlID0gVFJVRSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjb2xuYW1lcyhhMSkgPC0gYygnZGVzYzEnLCdtcGcxJywnY3lsMScsJ2Rpc3AxJywnaHAxJywnZHJhdDEnLCd3dDEnLCdxc2VjMScsJ3ZzMScsJ2FtMScsJ2dlYXIxJywnY2FyYjEnKSBcbndpZXJzeiA8LSA0XG5uYXp3YV9wbGlrdSA8LSBcImEueGxzeFwiXG53YiA8LSBsb2FkV29ya2Jvb2sobmF6d2FfcGxpa3UpXG5kYW5lIDwtIHJlYWQueGxzeChuYXp3YV9wbGlrdSwgc2hlZXQgPSBcIlMxXCIsIHN0YXJ0Um93PXdpZXJzeiwgY29sTmFtZXM9RkFMU0UsIHNraXBFbXB0eVJvd3MgPSBGQUxTRSwgY29scyA9IGMoMTo1KSlcbmNvbG5hbWVzKGRhbmUpIDwtIGMoJ2Rlc2MxJywnbXBnMScsJ2N5bDEnLCdkaXNwMScpIFxud3JpdGVEYXRhKHdiLCBcIlMyXCIsIGRhbmUsIHN0YXJ0Q29sID0gMSwgc3RhcnRSb3cgPSAxLCByb3dOYW1lcyA9IEZBTFNFLCBjb2xOYW1lcyA9IFRSVUUpXG5cbndyaXRlRGF0YSh3YiwgXCJTMlwiLCBjKDEwOCksIHN0YXJ0Q29sID0gOCwgc3RhcnRSb3cgPSAxLCByb3dOYW1lcyA9IEZBTFNFLCBjb2xOYW1lcyA9IEZBTFNFKVxud3JpdGVEYXRhKHdiLCBcIlMyXCIsIGMoMTo2KSwgc3RhcnRDb2wgPSA1LCBzdGFydFJvdyA9IDIsIHJvd05hbWVzID0gRkFMU0UsIGNvbE5hbWVzID0gRkFMU0UpXG5cbnBvc1N0eWxlIDwtIGNyZWF0ZVN0eWxlKGZvbnRDb2xvdXIgPSBcIiMwMDYxMDBcIiwgYmdGaWxsID0gXCIjQzZFRkNFXCIpXG5vclN0eWxlIDwtIGNyZWF0ZVN0eWxlKGZvbnRDb2xvdXIgPSBcIndoaXRlXCIsIGJnRmlsbCA9IFwiYmx1ZVwiKVxuYW5kU3R5bGUgPC0gY3JlYXRlU3R5bGUoZm9udENvbG91ciA9IFwid2hpdGVcIiwgYmdGaWxsID0gXCJyZWRcIilcbnNhdmVXb3JrYm9vayh3YiwgXCJiLnhsc3hcIiwgb3ZlcndyaXRlID0gVFJVRSlcbmBgYCJ9 -->
 <pre class="r"><code># colnames(a1) &lt;- c(&#39;desc1&#39;,&#39;mpg1&#39;,&#39;cyl1&#39;,&#39;disp1&#39;,&#39;hp1&#39;,&#39;drat1&#39;,&#39;wt1&#39;,&#39;qsec1&#39;,&#39;vs1&#39;,&#39;am1&#39;,&#39;gear1&#39;,&#39;carb1&#39;) 
 wiersz &lt;- 4
 nazwa_pliku &lt;- &quot;a.xlsx&quot;
@@ -1854,74 +1865,121 @@ colnames(dane) &lt;- c(&#39;desc1&#39;,&#39;mpg1&#39;,&#39;cyl1&#39;,&#39;disp1&
 writeData(wb, &quot;S2&quot;, dane, startCol = 1, startRow = 1, rowNames = FALSE, colNames = TRUE)
 
 writeData(wb, &quot;S2&quot;, c(108), startCol = 8, startRow = 1, rowNames = FALSE, colNames = FALSE)
-writeData(wb, &quot;S2&quot;, c(1:6), startCol = 6, startRow = 2, rowNames = FALSE, colNames = FALSE)
+writeData(wb, &quot;S2&quot;, c(1:6), startCol = 5, startRow = 2, rowNames = FALSE, colNames = FALSE)
 
 posStyle &lt;- createStyle(fontColour = &quot;#006100&quot;, bgFill = &quot;#C6EFCE&quot;)
 orStyle &lt;- createStyle(fontColour = &quot;white&quot;, bgFill = &quot;blue&quot;)
 andStyle &lt;- createStyle(fontColour = &quot;white&quot;, bgFill = &quot;red&quot;)
-saveWorkbook(wb, &quot;a.xlsx&quot;, overwrite = TRUE)</code></pre>
+saveWorkbook(wb, &quot;b.xlsx&quot;, overwrite = TRUE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Wykorzystanie conditionalFormatting (patrz: Formatowanie warunkowe w
+Excel) dla różnych wariantów</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29uZGl0aW9uYWxGb3JtYXR0aW5nKHdiLCBcIlMyXCIsXG5jb2xzID0gNCxcbnJvd3MgPSAyOjcsIHJ1bGUgPSBcIiA+ICRIJDFcIiwgc3R5bGUgPSBwb3NTdHlsZSwgdHlwZSA9IFwiZXhwcmVzc2lvblwiXG4pXG5zYXZlV29ya2Jvb2sod2IsIG5hendhX3BsaWt1LCBvdmVyd3JpdGUgPSBUUlVFKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29uZGl0aW9uYWxGb3JtYXR0aW5nKHdiLCBcIlMyXCIsXG5jb2xzID0gNCxcbnJvd3MgPSAyOjcsIHJ1bGUgPSBcIiA+ICRIJDFcIiwgc3R5bGUgPSBwb3NTdHlsZSwgdHlwZSA9IFwiZXhwcmVzc2lvblwiXG4pXG5zYXZlV29ya2Jvb2sod2IsIFwiYi54bHN4XCIsIG92ZXJ3cml0ZSA9IFRSVUUpXG5gYGAifQ== -->
 <pre class="r"><code>conditionalFormatting(wb, &quot;S2&quot;,
 cols = 4,
 rows = 2:7, rule = &quot; &gt; $H$1&quot;, style = posStyle, type = &quot;expression&quot;
 )
-saveWorkbook(wb, nazwa_pliku, overwrite = TRUE)</code></pre>
+saveWorkbook(wb, &quot;b.xlsx&quot;, overwrite = TRUE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29uZGl0aW9uYWxGb3JtYXR0aW5nKHdiLCBcIlMyXCIsXG5jb2xzID0gNSxcbnJvd3MgPSAyOjcsIHN0eWxlID0gcG9zU3R5bGUsIHR5cGUgPSBcImJldHdlZW5cIiwgcnVsZSA9IGMoMiwgNClcbilcbnNhdmVXb3JrYm9vayh3YiwgbmF6d2FfcGxpa3UsIG92ZXJ3cml0ZSA9IFRSVUUpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29uZGl0aW9uYWxGb3JtYXR0aW5nKHdiLCBcIlMyXCIsXG5jb2xzID0gNSxcbnJvd3MgPSAyOjcsIHN0eWxlID0gcG9zU3R5bGUsIHR5cGUgPSBcImJldHdlZW5cIiwgcnVsZSA9IGMoMiwgNClcbilcbnNhdmVXb3JrYm9vayh3YiwgXCJiLnhsc3hcIiwgb3ZlcndyaXRlID0gVFJVRSlcbmBgYCJ9 -->
 <pre class="r"><code>conditionalFormatting(wb, &quot;S2&quot;,
 cols = 5,
 rows = 2:7, style = posStyle, type = &quot;between&quot;, rule = c(2, 4)
 )
-saveWorkbook(wb, nazwa_pliku, overwrite = TRUE)</code></pre>
+saveWorkbook(wb, &quot;b.xlsx&quot;, overwrite = TRUE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29uZGl0aW9uYWxGb3JtYXR0aW5nKHdiLCBcIlMyXCIsXG5jb2xzID0gMSxcbnJvd3MgPSAyOjYsIHN0eWxlID0gcG9zU3R5bGUsIHR5cGUgPSBcImNvbnRhaW5zXCIsIHJ1bGUgPSBcIk1hXCJcbilcbnNhdmVXb3JrYm9vayh3YiwgbmF6d2FfcGxpa3UsIG92ZXJ3cml0ZSA9IFRSVUUpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29uZGl0aW9uYWxGb3JtYXR0aW5nKHdiLCBcIlMyXCIsXG5jb2xzID0gMSxcbnJvd3MgPSAyOjcsIHN0eWxlID0gcG9zU3R5bGUsIHR5cGUgPSBcImNvbnRhaW5zXCIsIHJ1bGUgPSBcIk1hXCJcbilcbnNhdmVXb3JrYm9vayh3YiwgXCJiLnhsc3hcIiwgb3ZlcndyaXRlID0gVFJVRSlcbmBgYCJ9 -->
 <pre class="r"><code>conditionalFormatting(wb, &quot;S2&quot;,
 cols = 1,
-rows = 2:6, style = posStyle, type = &quot;contains&quot;, rule = &quot;Ma&quot;
+rows = 2:7, style = posStyle, type = &quot;contains&quot;, rule = &quot;Ma&quot;
 )
-saveWorkbook(wb, nazwa_pliku, overwrite = TRUE)</code></pre>
+saveWorkbook(wb, &quot;b.xlsx&quot;, overwrite = TRUE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Wykorzystanie conditionalFormatting (patrz: Formatowanie warunkowe w
+Excel) dla warunku logicznego OR i AND</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29uZGl0aW9uYWxGb3JtYXR0aW5nKHdiLCBcIlMyXCIsXG5jb2xzID0gNCxcbnJvd3MgPSAyOjYsIHJ1bGUgPSBcIk9SKCRDMj04LCREMj0xMDgpXCIsIHN0eWxlID0gb3JTdHlsZSwgdHlwZSA9IFwiZXhwcmVzc2lvblwiXG4pXG5zYXZlV29ya2Jvb2sod2IsIG5hendhX3BsaWt1LCBvdmVyd3JpdGUgPSBUUlVFKVxuXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29uZGl0aW9uYWxGb3JtYXR0aW5nKHdiLCBcIlMyXCIsXG5jb2xzID0gNCxcbnJvd3MgPSAyOjcsIHJ1bGUgPSBcIk9SKCRDMj04LCREMj0xMDgpXCIsIHN0eWxlID0gb3JTdHlsZSwgdHlwZSA9IFwiZXhwcmVzc2lvblwiXG4pXG5zYXZlV29ya2Jvb2sod2IsIFwiYi54bHN4XCIsIG92ZXJ3cml0ZSA9IFRSVUUpXG5cbmBgYCJ9 -->
 <pre class="r"><code>conditionalFormatting(wb, &quot;S2&quot;,
 cols = 4,
-rows = 2:6, rule = &quot;OR($C2=8,$D2=108)&quot;, style = orStyle, type = &quot;expression&quot;
+rows = 2:7, rule = &quot;OR($C2=8,$D2=108)&quot;, style = orStyle, type = &quot;expression&quot;
 )
-saveWorkbook(wb, nazwa_pliku, overwrite = TRUE)
+saveWorkbook(wb, &quot;b.xlsx&quot;, overwrite = TRUE)
 </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29uZGl0aW9uYWxGb3JtYXR0aW5nKHdiLCBcIlMyXCIsXG5jb2xzID0gNCxcbnJvd3MgPSAyOjcsIHJ1bGUgPSBcIkFORCgkQzI9NiwkRDI9MjI1KVwiLCBzdHlsZSA9IGFuZFN0eWxlLCB0eXBlID0gXCJleHByZXNzaW9uXCJcbilcbnNhdmVXb3JrYm9vayh3YiwgbmF6d2FfcGxpa3UsIG92ZXJ3cml0ZSA9IFRSVUUpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29uZGl0aW9uYWxGb3JtYXR0aW5nKHdiLCBcIlMyXCIsXG5jb2xzID0gNCxcbnJvd3MgPSAyOjcsIHJ1bGUgPSBcIkFORCgkQzI9NiwkRDI9MjI1KVwiLCBzdHlsZSA9IGFuZFN0eWxlLCB0eXBlID0gXCJleHByZXNzaW9uXCJcbilcbnNhdmVXb3JrYm9vayh3YiwgXCJiLnhsc3hcIiwgb3ZlcndyaXRlID0gVFJVRSlcbmBgYCJ9 -->
 <pre class="r"><code>conditionalFormatting(wb, &quot;S2&quot;,
 cols = 4,
 rows = 2:7, rule = &quot;AND($C2=6,$D2=225)&quot;, style = andStyle, type = &quot;expression&quot;
 )
-saveWorkbook(wb, nazwa_pliku, overwrite = TRUE)</code></pre>
+saveWorkbook(wb, &quot;b.xlsx&quot;, overwrite = TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Wyświetla kolumnę z gradientem</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud3JpdGVEYXRhKHdiLCBcIlMyXCIsIC0zOjIsIHN0YXJ0Q29sID0gNiwgc3RhcnRSb3cgPSAyKVxuY29uZGl0aW9uYWxGb3JtYXR0aW5nKHdiLCBcIlMyXCIsXG5jb2xzID0gNiwgcm93cyA9IDI6NyxcbnR5cGUgPSBcImRhdGFiYXJcIiwgc3R5bGUgPSBjKFwiI2E2YTZhNlwiLCBcIiNhNmE2YTZcIiksIHNob3dWYWx1ZSA9IEZBTFNFLCBncmFkaWVudCA9IEZBTFNFXG4pXG5zYXZlV29ya2Jvb2sod2IsIFwiYi54bHN4XCIsIG92ZXJ3cml0ZSA9IFRSVUUpXG5gYGAifQ== -->
+<pre class="r"><code>writeData(wb, &quot;S2&quot;, -3:2, startCol = 6, startRow = 2)
+conditionalFormatting(wb, &quot;S2&quot;,
+cols = 6, rows = 2:7,
+type = &quot;databar&quot;, style = c(&quot;#a6a6a6&quot;, &quot;#a6a6a6&quot;), showValue = FALSE, gradient = FALSE
+)
+saveWorkbook(wb, &quot;b.xlsx&quot;, overwrite = TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Zaznacza 5 najwyższych wartości z kolumny Wykorzystanie serwisu <a href="https://colorhunt.co/" class="uri">https://colorhunt.co/</a> do
+wyboru koloru</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWRkV29ya3NoZWV0KHdiLCBzaGVldE5hbWUgPSBcIlMzXCIpXG5gYGAifQ== -->
+<pre class="r"><code>addWorksheet(wb, sheetName = &quot;S3&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudG9wU3R5bGUgPC0gY3JlYXRlU3R5bGUoZm9udENvbG91ciA9IFwiI0ZGRkZGRlwiLCBiZ0ZpbGwgPSBcIiNGMDU5NDFcIilcbndyaXRlRGF0YSh3YiwgXCJTM1wiLCBkYXRhLmZyYW1lKHggPSAxOjEwLCB5ID0gcm5vcm0oMTApKSlcbmNvbmRpdGlvbmFsRm9ybWF0dGluZyh3YiwgXCJTM1wiLCBjb2xzID0gMiwgcm93cyA9IDI6MTEsIHN0eWxlID0gdG9wU3R5bGUsIHR5cGUgPSBcInRvcE5cIiwgcmFuayA9IDUpXG5zYXZlV29ya2Jvb2sod2IsIFwiYi54bHN4XCIsIG92ZXJ3cml0ZSA9IFRSVUUpXG5gYGAifQ== -->
+<pre class="r"><code>topStyle &lt;- createStyle(fontColour = &quot;#FFFFFF&quot;, bgFill = &quot;#F05941&quot;)
+writeData(wb, &quot;S3&quot;, data.frame(x = 1:10, y = rnorm(10)))
+conditionalFormatting(wb, &quot;S3&quot;, cols = 2, rows = 2:11, style = topStyle, type = &quot;topN&quot;, rank = 5)
+saveWorkbook(wb, &quot;b.xlsx&quot;, overwrite = TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Zaznacza 5 najniższych wartości z kolumny</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYm90dG9tU3R5bGUgPC0gY3JlYXRlU3R5bGUoZm9udENvbG91ciA9IFwiIzAwMDAwMFwiLCBiZ0ZpbGwgPSBcIiNGRkY1QzJcIilcbndyaXRlRGF0YSh3YiwgXCJTM1wiLCBkYXRhLmZyYW1lKHggPSAxOjEwLCB5ID0gcm5vcm0oMTApKSlcbmNvbmRpdGlvbmFsRm9ybWF0dGluZyh3YiwgXCJTM1wiLCBjb2xzID0gMiwgcm93cyA9IDI6MTEsIHN0eWxlID0gYm90dG9tU3R5bGUsIHR5cGUgPSBcImJvdHRvbU5cIiwgcmFuayA9IDUpXG5zYXZlV29ya2Jvb2sod2IsIFwiYi54bHN4XCIsIG92ZXJ3cml0ZSA9IFRSVUUpXG5gYGAifQ== -->
+<pre class="r"><code>bottomStyle &lt;- createStyle(fontColour = &quot;#000000&quot;, bgFill = &quot;#FFF5C2&quot;)
+writeData(wb, &quot;S3&quot;, data.frame(x = 1:10, y = rnorm(10)))
+conditionalFormatting(wb, &quot;S3&quot;, cols = 2, rows = 2:11, style = bottomStyle, type = &quot;bottomN&quot;, rank = 5)
+saveWorkbook(wb, &quot;b.xlsx&quot;, overwrite = TRUE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCmxpYnJhcnkob3Blbnhsc3gpDQpgYGANCg0KYGBge3J9DQp3YiA8LSBjcmVhdGVXb3JrYm9vaygpDQphZGRXb3Jrc2hlZXQod2IsIHNoZWV0TmFtZSA9ICJTMSIpDQphZGRXb3Jrc2hlZXQod2IsIHNoZWV0TmFtZSA9ICJTMiIpDQphZGRXb3Jrc2hlZXQod2IsIHNoZWV0TmFtZSA9ICJTMyIpDQphY3RpdmVTaGVldCh3YikgPC0gMQ0Kc2F2ZVdvcmtib29rKHdiLCAiYS54bHN4Iiwgb3ZlcndyaXRlID0gVFJVRSkNCmBgYA0KDQpgYGB7cn0NCmFzIDwtIGFjdGl2ZVNoZWV0KHdiKSANCmFzDQpgYGANCg0KYGBge3J9DQphZGRDcmVhdG9yKHdiLCAiV1ciKQ0KYGBgDQoNCmBgYHtyfQ0KeCA8LSBtdGNhcnNbMTo2LCBdDQp4DQp3cml0ZURhdGEod2IsIDEsIHgsIHN0YXJ0Q29sID0gMiwgc3RhcnRSb3cgPSAzLCByb3dOYW1lcyA9IFRSVUUpDQpzYXZlV29ya2Jvb2sod2IsICJhLnhsc3giLCBvdmVyd3JpdGUgPSBUUlVFKQ0KYGBgDQoNCg0KYGBge3J9DQpzdDEgPC0gY3JlYXRlU3R5bGUoZmdGaWxsID0gIiNEQ0U2RjEiLCB2YWxpZ249ImNlbnRlciIsIGhhbGlnbiA9ICJDRU5URVIiLCB0ZXh0RGVjb3JhdGlvbiA9ICJpdGFsaWMiLCBib3JkZXIgPSBjKCJUb3AiLCAiQm90dG9tIiksIGJvcmRlclN0eWxlPWMoInRoaW4iLCAidGhpY2siKSkNCnggPC0gbXRjYXJzWzE6NiwgXQ0KeA0Kc2V0Um93SGVpZ2h0cyh3YiwgMSwgcm93cyA9IDMsIGhlaWdodHMgPSA0MCkNCnNldENvbFdpZHRocyh3YiwgIlMxIiwgY29scz0yLCB3aWR0aHMgPSAyMCApDQp3cml0ZURhdGEod2IsIDEsIHgsIHN0YXJ0Q29sID0gMiwgc3RhcnRSb3cgPSAzLCByb3dOYW1lcyA9IFRSVUUsIGhlYWRlclN0eWxlID0gc3QxKQ0Kc2F2ZVdvcmtib29rKHdiLCAiYS54bHN4Iiwgb3ZlcndyaXRlID0gVFJVRSkNCg0KYGBgDQoNCmBgYHtyfQ0Kc3QyIDwtIGNyZWF0ZVN0eWxlKGZnRmlsbCA9ICIjRENFNkYxIiwgaGFsaWduPSJjZW50ZXIiKQ0KbWVyZ2VDZWxscyh3YiwgIlMxIiwgY29scyA9IDI6MTMsIHJvd3MgPSAxKQ0KYWRkU3R5bGUod2IsICJTMSIsIHN0MiwgMSwgMiwgZ3JpZEV4cGFuZCA9IEZBTFNFLCBzdGFjayA9IEZBTFNFKQ0Kd3JpdGVEYXRhKHdiLCAxLCBjKCJ0YWJlbGthIGRsYSBvcGVueGxzeCIpLCBzdGFydENvbCA9IDIsIHN0YXJ0Um93ID0gMSwgcm93TmFtZXMgPSBGQUxTRSkNCnNhdmVXb3JrYm9vayh3YiwgImEueGxzeCIsIG92ZXJ3cml0ZSA9IFRSVUUpDQpgYGANCg0KDQpgYGB7cn0NCiMgY29sbmFtZXMoYTEpIDwtIGMoJ2Rlc2MxJywnbXBnMScsJ2N5bDEnLCdkaXNwMScsJ2hwMScsJ2RyYXQxJywnd3QxJywncXNlYzEnLCd2czEnLCdhbTEnLCdnZWFyMScsJ2NhcmIxJykgDQp3aWVyc3ogPC0gNA0KbmF6d2FfcGxpa3UgPC0gImEueGxzeCINCndiIDwtIGxvYWRXb3JrYm9vayhuYXp3YV9wbGlrdSkNCmRhbmUgPC0gcmVhZC54bHN4KG5hendhX3BsaWt1LCBzaGVldCA9ICJTMSIsIHN0YXJ0Um93PXdpZXJzeiwgY29sTmFtZXM9RkFMU0UsIHNraXBFbXB0eVJvd3MgPSBGQUxTRSwgY29scyA9IGMoMTo1KSkNCmNvbG5hbWVzKGRhbmUpIDwtIGMoJ2Rlc2MxJywnbXBnMScsJ2N5bDEnLCdkaXNwMScpIA0Kd3JpdGVEYXRhKHdiLCAiUzIiLCBkYW5lLCBzdGFydENvbCA9IDEsIHN0YXJ0Um93ID0gMSwgcm93TmFtZXMgPSBGQUxTRSwgY29sTmFtZXMgPSBUUlVFKQ0KDQp3cml0ZURhdGEod2IsICJTMiIsIGMoMTA4KSwgc3RhcnRDb2wgPSA4LCBzdGFydFJvdyA9IDEsIHJvd05hbWVzID0gRkFMU0UsIGNvbE5hbWVzID0gRkFMU0UpDQp3cml0ZURhdGEod2IsICJTMiIsIGMoMTo2KSwgc3RhcnRDb2wgPSA1LCBzdGFydFJvdyA9IDIsIHJvd05hbWVzID0gRkFMU0UsIGNvbE5hbWVzID0gRkFMU0UpDQoNCnBvc1N0eWxlIDwtIGNyZWF0ZVN0eWxlKGZvbnRDb2xvdXIgPSAiIzAwNjEwMCIsIGJnRmlsbCA9ICIjQzZFRkNFIikNCm9yU3R5bGUgPC0gY3JlYXRlU3R5bGUoZm9udENvbG91ciA9ICJ3aGl0ZSIsIGJnRmlsbCA9ICJibHVlIikNCmFuZFN0eWxlIDwtIGNyZWF0ZVN0eWxlKGZvbnRDb2xvdXIgPSAid2hpdGUiLCBiZ0ZpbGwgPSAicmVkIikNCnNhdmVXb3JrYm9vayh3YiwgImEueGxzeCIsIG92ZXJ3cml0ZSA9IFRSVUUpDQpgYGANCg0KDQpgYGB7cn0NCmNvbmRpdGlvbmFsRm9ybWF0dGluZyh3YiwgIlMyIiwNCmNvbHMgPSA0LA0Kcm93cyA9IDI6NywgcnVsZSA9ICIgPiAkSCQxIiwgc3R5bGUgPSBwb3NTdHlsZSwgdHlwZSA9ICJleHByZXNzaW9uIg0KKQ0Kc2F2ZVdvcmtib29rKHdiLCBuYXp3YV9wbGlrdSwgb3ZlcndyaXRlID0gVFJVRSkNCmBgYA0KDQoNCmBgYHtyfQ0KY29uZGl0aW9uYWxGb3JtYXR0aW5nKHdiLCAiUzIiLA0KY29scyA9IDUsDQpyb3dzID0gMjo3LCBzdHlsZSA9IHBvc1N0eWxlLCB0eXBlID0gImJldHdlZW4iLCBydWxlID0gYygyLCA0KQ0KKQ0Kc2F2ZVdvcmtib29rKHdiLCBuYXp3YV9wbGlrdSwgb3ZlcndyaXRlID0gVFJVRSkNCmBgYA0KDQoNCmBgYHtyfQ0KY29uZGl0aW9uYWxGb3JtYXR0aW5nKHdiLCAiUzIiLA0KY29scyA9IDEsDQpyb3dzID0gMjo3LCBzdHlsZSA9IHBvc1N0eWxlLCB0eXBlID0gImNvbnRhaW5zIiwgcnVsZSA9ICJNYSINCikNCnNhdmVXb3JrYm9vayh3YiwgbmF6d2FfcGxpa3UsIG92ZXJ3cml0ZSA9IFRSVUUpDQpgYGANCg0KDQpgYGB7cn0NCmNvbmRpdGlvbmFsRm9ybWF0dGluZyh3YiwgIlMyIiwNCmNvbHMgPSA0LA0Kcm93cyA9IDI6NywgcnVsZSA9ICJPUigkQzI9OCwkRDI9MTA4KSIsIHN0eWxlID0gb3JTdHlsZSwgdHlwZSA9ICJleHByZXNzaW9uIg0KKQ0Kc2F2ZVdvcmtib29rKHdiLCBuYXp3YV9wbGlrdSwgb3ZlcndyaXRlID0gVFJVRSkNCg0KYGBgDQoNCmBgYHtyfQ0KY29uZGl0aW9uYWxGb3JtYXR0aW5nKHdiLCAiUzIiLA0KY29scyA9IDQsDQpyb3dzID0gMjo3LCBydWxlID0gIkFORCgkQzI9NiwkRDI9MjI1KSIsIHN0eWxlID0gYW5kU3R5bGUsIHR5cGUgPSAiZXhwcmVzc2lvbiINCikNCnNhdmVXb3JrYm9vayh3YiwgbmF6d2FfcGxpa3UsIG92ZXJ3cml0ZSA9IFRSVUUpDQpgYGANCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCmxpYnJhcnkob3Blbnhsc3gpDQpgYGANCg0KYGBge3J9DQp3YiA8LSBjcmVhdGVXb3JrYm9vaygpDQphZGRXb3Jrc2hlZXQod2IsIHNoZWV0TmFtZSA9ICJTMSIpDQphZGRXb3Jrc2hlZXQod2IsIHNoZWV0TmFtZSA9ICJTMiIpDQphZGRXb3Jrc2hlZXQod2IsIHNoZWV0TmFtZSA9ICJTMyIpDQphY3RpdmVTaGVldCh3YikgPC0gMQ0Kc2F2ZVdvcmtib29rKHdiLCAiYS54bHN4Iiwgb3ZlcndyaXRlID0gVFJVRSkNCmBgYA0KDQpgYGB7cn0NCmFzIDwtIGFjdGl2ZVNoZWV0KHdiKSANCnNoIDwtIG5hbWVzKHdiKQ0KbHNoIDwtIHNoID09ICJTMyINCmluZGVrc19waWVyd3N6ZWdvX3RydWUgPC0gd2hpY2gobHNoID09IFRSVUUsIGFyci5pbmQgPSBUUlVFKVsxXQ0KaW5kZWtzX3BpZXJ3c3plZ29fdHJ1ZQ0KaWYgKGFueShsc2gpKSB7DQogICMgamVzdA0KICByZW1vdmVXb3Jrc2hlZXQod2IsICJTMyIpDQp9DQpzYXZlV29ya2Jvb2sod2IsICJhLnhsc3giLCBvdmVyd3JpdGUgPSBUUlVFKQ0KYGBgDQoNCg0KYGBge3J9DQphZGRDcmVhdG9yKHdiLCAiV1ciKQ0KYGBgDQoNCmBgYHtyfQ0KeCA8LSBtdGNhcnNbMTo2LCBdDQp4DQp3cml0ZURhdGEod2IsIDEsIHgsIHN0YXJ0Q29sID0gMiwgc3RhcnRSb3cgPSAzLCByb3dOYW1lcyA9IFRSVUUpDQpzYXZlV29ya2Jvb2sod2IsICJhLnhsc3giLCBvdmVyd3JpdGUgPSBUUlVFKQ0KYGBgDQoNCg0KYGBge3J9DQpzdDEgPC0gY3JlYXRlU3R5bGUoZmdGaWxsID0gIiNEQ0U2RjEiLCB2YWxpZ249ImNlbnRlciIsIGhhbGlnbiA9ICJDRU5URVIiLCB0ZXh0RGVjb3JhdGlvbiA9ICJpdGFsaWMiLCBib3JkZXIgPSBjKCJUb3AiLCAiQm90dG9tIiksIGJvcmRlclN0eWxlPWMoInRoaW4iLCAidGhpY2siKSkNCnggPC0gbXRjYXJzWzE6NiwgXQ0KeA0Kc2V0Um93SGVpZ2h0cyh3YiwgMSwgcm93cyA9IDMsIGhlaWdodHMgPSA0MCkNCnNldENvbFdpZHRocyh3YiwgIlMxIiwgY29scz0yLCB3aWR0aHMgPSAyMCApDQp3cml0ZURhdGEod2IsIDEsIHgsIHN0YXJ0Q29sID0gMiwgc3RhcnRSb3cgPSAzLCByb3dOYW1lcyA9IFRSVUUsIGhlYWRlclN0eWxlID0gc3QxKQ0Kc2F2ZVdvcmtib29rKHdiLCAiYS54bHN4Iiwgb3ZlcndyaXRlID0gVFJVRSkNCg0KYGBgDQoNCmBgYHtyfQ0Kc3QyIDwtIGNyZWF0ZVN0eWxlKGZnRmlsbCA9ICIjRENFNkYxIiwgaGFsaWduPSJjZW50ZXIiKQ0KbWVyZ2VDZWxscyh3YiwgIlMxIiwgY29scyA9IDI6MTMsIHJvd3MgPSAxKQ0KYWRkU3R5bGUod2IsICJTMSIsIHN0MiwgMSwgMiwgZ3JpZEV4cGFuZCA9IEZBTFNFLCBzdGFjayA9IEZBTFNFKQ0Kd3JpdGVEYXRhKHdiLCAxLCBjKCJ0YWJlbGthIGRsYSBvcGVueGxzeCIpLCBzdGFydENvbCA9IDIsIHN0YXJ0Um93ID0gMSwgcm93TmFtZXMgPSBGQUxTRSkNCnNhdmVXb3JrYm9vayh3YiwgImEueGxzeCIsIG92ZXJ3cml0ZSA9IFRSVUUpDQpgYGANCg0KDQoNClByenlnb3Rvd2FuaWUgZGFueWNoIGRsYSBkYWxzemVqIGN6xJnFm2NpIHd5a29yenlzdGFueWNoIGZ1bmtjamkNCg0KYGBge3J9DQojIGNvbG5hbWVzKGExKSA8LSBjKCdkZXNjMScsJ21wZzEnLCdjeWwxJywnZGlzcDEnLCdocDEnLCdkcmF0MScsJ3d0MScsJ3FzZWMxJywndnMxJywnYW0xJywnZ2VhcjEnLCdjYXJiMScpIA0Kd2llcnN6IDwtIDQNCm5hendhX3BsaWt1IDwtICJhLnhsc3giDQp3YiA8LSBsb2FkV29ya2Jvb2sobmF6d2FfcGxpa3UpDQpkYW5lIDwtIHJlYWQueGxzeChuYXp3YV9wbGlrdSwgc2hlZXQgPSAiUzEiLCBzdGFydFJvdz13aWVyc3osIGNvbE5hbWVzPUZBTFNFLCBza2lwRW1wdHlSb3dzID0gRkFMU0UsIGNvbHMgPSBjKDE6NSkpDQpjb2xuYW1lcyhkYW5lKSA8LSBjKCdkZXNjMScsJ21wZzEnLCdjeWwxJywnZGlzcDEnKSANCndyaXRlRGF0YSh3YiwgIlMyIiwgZGFuZSwgc3RhcnRDb2wgPSAxLCBzdGFydFJvdyA9IDEsIHJvd05hbWVzID0gRkFMU0UsIGNvbE5hbWVzID0gVFJVRSkNCg0Kd3JpdGVEYXRhKHdiLCAiUzIiLCBjKDEwOCksIHN0YXJ0Q29sID0gOCwgc3RhcnRSb3cgPSAxLCByb3dOYW1lcyA9IEZBTFNFLCBjb2xOYW1lcyA9IEZBTFNFKQ0Kd3JpdGVEYXRhKHdiLCAiUzIiLCBjKDE6NiksIHN0YXJ0Q29sID0gNSwgc3RhcnRSb3cgPSAyLCByb3dOYW1lcyA9IEZBTFNFLCBjb2xOYW1lcyA9IEZBTFNFKQ0KDQpwb3NTdHlsZSA8LSBjcmVhdGVTdHlsZShmb250Q29sb3VyID0gIiMwMDYxMDAiLCBiZ0ZpbGwgPSAiI0M2RUZDRSIpDQpvclN0eWxlIDwtIGNyZWF0ZVN0eWxlKGZvbnRDb2xvdXIgPSAid2hpdGUiLCBiZ0ZpbGwgPSAiYmx1ZSIpDQphbmRTdHlsZSA8LSBjcmVhdGVTdHlsZShmb250Q29sb3VyID0gIndoaXRlIiwgYmdGaWxsID0gInJlZCIpDQpzYXZlV29ya2Jvb2sod2IsICJiLnhsc3giLCBvdmVyd3JpdGUgPSBUUlVFKQ0KYGBgDQoNCld5a29yenlzdGFuaWUgY29uZGl0aW9uYWxGb3JtYXR0aW5nIChwYXRyejogRm9ybWF0b3dhbmllIHdhcnVua293ZSB3IEV4Y2VsKSBkbGEgcsOzxbxueWNoIHdhcmlhbnTDs3cNCg0KYGBge3J9DQpjb25kaXRpb25hbEZvcm1hdHRpbmcod2IsICJTMiIsDQpjb2xzID0gNCwNCnJvd3MgPSAyOjcsIHJ1bGUgPSAiID4gJEgkMSIsIHN0eWxlID0gcG9zU3R5bGUsIHR5cGUgPSAiZXhwcmVzc2lvbiINCikNCnNhdmVXb3JrYm9vayh3YiwgImIueGxzeCIsIG92ZXJ3cml0ZSA9IFRSVUUpDQpgYGANCg0KDQpgYGB7cn0NCmNvbmRpdGlvbmFsRm9ybWF0dGluZyh3YiwgIlMyIiwNCmNvbHMgPSA1LA0Kcm93cyA9IDI6Nywgc3R5bGUgPSBwb3NTdHlsZSwgdHlwZSA9ICJiZXR3ZWVuIiwgcnVsZSA9IGMoMiwgNCkNCikNCnNhdmVXb3JrYm9vayh3YiwgImIueGxzeCIsIG92ZXJ3cml0ZSA9IFRSVUUpDQpgYGANCg0KDQpgYGB7cn0NCmNvbmRpdGlvbmFsRm9ybWF0dGluZyh3YiwgIlMyIiwNCmNvbHMgPSAxLA0Kcm93cyA9IDI6Nywgc3R5bGUgPSBwb3NTdHlsZSwgdHlwZSA9ICJjb250YWlucyIsIHJ1bGUgPSAiTWEiDQopDQpzYXZlV29ya2Jvb2sod2IsICJiLnhsc3giLCBvdmVyd3JpdGUgPSBUUlVFKQ0KYGBgDQoNCld5a29yenlzdGFuaWUgY29uZGl0aW9uYWxGb3JtYXR0aW5nIChwYXRyejogRm9ybWF0b3dhbmllIHdhcnVua293ZSB3IEV4Y2VsKSBkbGEgd2FydW5rdSBsb2dpY3puZWdvIE9SIGkgQU5EDQoNCmBgYHtyfQ0KY29uZGl0aW9uYWxGb3JtYXR0aW5nKHdiLCAiUzIiLA0KY29scyA9IDQsDQpyb3dzID0gMjo3LCBydWxlID0gIk9SKCRDMj04LCREMj0xMDgpIiwgc3R5bGUgPSBvclN0eWxlLCB0eXBlID0gImV4cHJlc3Npb24iDQopDQpzYXZlV29ya2Jvb2sod2IsICJiLnhsc3giLCBvdmVyd3JpdGUgPSBUUlVFKQ0KDQpgYGANCg0KYGBge3J9DQpjb25kaXRpb25hbEZvcm1hdHRpbmcod2IsICJTMiIsDQpjb2xzID0gNCwNCnJvd3MgPSAyOjcsIHJ1bGUgPSAiQU5EKCRDMj02LCREMj0yMjUpIiwgc3R5bGUgPSBhbmRTdHlsZSwgdHlwZSA9ICJleHByZXNzaW9uIg0KKQ0Kc2F2ZVdvcmtib29rKHdiLCAiYi54bHN4Iiwgb3ZlcndyaXRlID0gVFJVRSkNCmBgYA0KDQpXecWbd2lldGxhIGtvbHVtbsSZIHogZ3JhZGllbnRlbQ0KDQpgYGB7cn0NCndyaXRlRGF0YSh3YiwgIlMyIiwgLTM6Miwgc3RhcnRDb2wgPSA2LCBzdGFydFJvdyA9IDIpDQpjb25kaXRpb25hbEZvcm1hdHRpbmcod2IsICJTMiIsDQpjb2xzID0gNiwgcm93cyA9IDI6NywNCnR5cGUgPSAiZGF0YWJhciIsIHN0eWxlID0gYygiI2E2YTZhNiIsICIjYTZhNmE2IiksIHNob3dWYWx1ZSA9IEZBTFNFLCBncmFkaWVudCA9IEZBTFNFDQopDQpzYXZlV29ya2Jvb2sod2IsICJiLnhsc3giLCBvdmVyd3JpdGUgPSBUUlVFKQ0KYGBgDQoNCg0KWmF6bmFjemEgNSBuYWp3ecW8c3p5Y2ggd2FydG/Fm2NpIHoga29sdW1ueQ0KV3lrb3J6eXN0YW5pZSBzZXJ3aXN1IGh0dHBzOi8vY29sb3JodW50LmNvLyBkbyB3eWJvcnUga29sb3J1DQoNCmBgYHtyfQ0KYWRkV29ya3NoZWV0KHdiLCBzaGVldE5hbWUgPSAiUzMiKQ0KYGBgDQoNCmBgYHtyfQ0KdG9wU3R5bGUgPC0gY3JlYXRlU3R5bGUoZm9udENvbG91ciA9ICIjRkZGRkZGIiwgYmdGaWxsID0gIiNGMDU5NDEiKQ0Kd3JpdGVEYXRhKHdiLCAiUzMiLCBkYXRhLmZyYW1lKHggPSAxOjEwLCB5ID0gcm5vcm0oMTApKSkNCmNvbmRpdGlvbmFsRm9ybWF0dGluZyh3YiwgIlMzIiwgY29scyA9IDIsIHJvd3MgPSAyOjExLCBzdHlsZSA9IHRvcFN0eWxlLCB0eXBlID0gInRvcE4iLCByYW5rID0gNSkNCnNhdmVXb3JrYm9vayh3YiwgImIueGxzeCIsIG92ZXJ3cml0ZSA9IFRSVUUpDQpgYGANCg0KWmF6bmFjemEgNSBuYWpuacW8c3p5Y2ggd2FydG/Fm2NpIHoga29sdW1ueQ0KDQpgYGB7cn0NCmJvdHRvbVN0eWxlIDwtIGNyZWF0ZVN0eWxlKGZvbnRDb2xvdXIgPSAiIzAwMDAwMCIsIGJnRmlsbCA9ICIjRkZGNUMyIikNCndyaXRlRGF0YSh3YiwgIlMzIiwgZGF0YS5mcmFtZSh4ID0gMToxMCwgeSA9IHJub3JtKDEwKSkpDQpjb25kaXRpb25hbEZvcm1hdHRpbmcod2IsICJTMyIsIGNvbHMgPSAyLCByb3dzID0gMjoxMSwgc3R5bGUgPSBib3R0b21TdHlsZSwgdHlwZSA9ICJib3R0b21OIiwgcmFuayA9IDUpDQpzYXZlV29ya2Jvb2sod2IsICJiLnhsc3giLCBvdmVyd3JpdGUgPSBUUlVFKQ0KYGBgDQoNCg==</div>
 
 
 
