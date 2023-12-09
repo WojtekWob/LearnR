@@ -1,0 +1,53 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Bazy danych
+
+```{r}
+library(RODBC)
+```
+
+```{r}
+conn = odbcConnect("test")
+conn
+```
+```{r}
+nazwa_tabeli <- "tab1"
+k <- sqlColumns(conn, sqtable = nazwa_tabeli, errors = TRUE, as.is = TRUE, special = FALSE, catalog = NULL,
+schema = NULL, literal = FALSE)
+k["COLUMN_NAME"]
+```
+
+
+```{r}
+query <- "SELECT * FROM tab1"
+
+result <- sqlQuery(conn, query)
+print(result)
+```
+
+```{r}
+#insert z PK
+nazwa_tabeli <- "tab1"
+
+maxLP <- sqlQuery(conn, "SELECT max(lp) as lp FROM tab1")
+maxLP <- maxLP + 1
+nowy_wiersz <- data.frame(lp = maxLP, t1 = "zeta", t2 = "d123", t3 = 10)
+sqlQuery(conn, "Set Identity_Insert tab1 On", errors = TRUE)
+sqlSave(conn, nowy_wiersz, tablename = nazwa_tabeli, append = TRUE, rownames=FALSE, colnames = FALSE, verbose = TRUE, addPK = TRUE)
+sqlQuery(conn, "Set Identity_Insert tab1 Off", errors = TRUE)
+```
+
+```{r}
+#update
+nazwa_tabeli <- "tab1"
+zmieniony_wiersz <- data.frame(lp = 8, t1 = "osiem", t2 = "osiem", t3=8)
+sqlUpdate(conn, zmieniony_wiersz, tablename=nazwa_tabeli, index=c("lp"))
+```
+
+```{r}
+odbcClose(conn)
+```
+
